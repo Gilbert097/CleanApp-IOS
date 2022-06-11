@@ -1,0 +1,45 @@
+//
+//  DataTests.swift
+//  DataTests
+//
+//  Created by Gilberto Silva on 11/06/22.
+//
+
+import XCTest
+
+class AddAccountRemote {
+    private let url: URL
+    private let httpPostClient: HttpPostClient
+    
+    init(url: URL, httpPostClient: HttpPostClient) {
+        self.url = url
+        self.httpPostClient = httpPostClient
+    }
+    
+    func add() {
+        httpPostClient.post(url: url)
+    }
+}
+
+protocol HttpPostClient {
+    func post(url: URL)
+}
+
+class AddAccountRemoteTests: XCTestCase {
+
+    func test_() throws {
+        let url = URL(string: "http://any-url.com")
+        let httpClientSpy = HttpPostClientSpy()
+        let sut = AddAccountRemote(url: url!, httpPostClient: httpClientSpy)
+        sut.add()
+        XCTAssertEqual(httpClientSpy.url, url)
+    }
+
+    class HttpPostClientSpy: HttpPostClient {
+        var url: URL?
+        
+        func post(url: URL) {
+            self.url = url
+        }
+    }
+}
