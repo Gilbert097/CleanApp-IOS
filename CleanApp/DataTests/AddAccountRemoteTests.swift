@@ -29,13 +29,13 @@ class AddAccountRemoteTests: XCTestCase {
 
     func test_() throws {
         let url = URL(string: "http://any-url.com")
-        let httpClientSpy = HttpPostClientSpy()
+        let httpClientSpy = HttpClientSpy()
         let sut = AddAccountRemote(url: url!, httpPostClient: httpClientSpy)
         sut.add()
         XCTAssertEqual(httpClientSpy.url, url)
     }
 
-    class HttpPostClientSpy: HttpPostClient {
+    class HttpClientSpy: HttpPostClient {
         var url: URL?
         
         func post(url: URL) {
