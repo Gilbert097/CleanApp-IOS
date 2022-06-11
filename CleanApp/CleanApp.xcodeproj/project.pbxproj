@@ -112,9 +112,8 @@
 		D4A5A8C32852DC460099B00D /* Domain */ = {
 			isa = PBXGroup;
 			children = (
-				D4A5A8C928554D9F0099B00D /* AddAccount.swift */,
-				D4A5A8CB28554ECD0099B00D /* AccountModel.swift */,
-				D4A5A8ED28555E620099B00D /* Model.swift */,
+				D4A5A8F428555F950099B00D /* Models */,
+				D4A5A8F328555F840099B00D /* UseCases */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -122,8 +121,8 @@
 		D4A5A8D328554F570099B00D /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				D4A5A8EF28555EF50099B00D /* AddAccountRemote.swift */,
-				D4A5A8F128555F290099B00D /* HttpPostClient.swift */,
+				D4A5A8F628555FB40099B00D /* Http */,
+				D4A5A8F528555FAA0099B00D /* UserCases */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -131,7 +130,7 @@
 		D4A5A8DD28554F570099B00D /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4A5A8DE28554F570099B00D /* AddAccountRemoteTests.swift */,
+				D4A5A8F728555FC90099B00D /* UserCases */,
 			);
 			path = DataTests;
 			sourceTree = "<group>";
@@ -141,6 +140,47 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D4A5A8F328555F840099B00D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5A8C928554D9F0099B00D /* AddAccount.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
+		D4A5A8F428555F950099B00D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5A8CB28554ECD0099B00D /* AccountModel.swift */,
+				D4A5A8ED28555E620099B00D /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D4A5A8F528555FAA0099B00D /* UserCases */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5A8EF28555EF50099B00D /* AddAccountRemote.swift */,
+			);
+			path = UserCases;
+			sourceTree = "<group>";
+		};
+		D4A5A8F628555FB40099B00D /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5A8F128555F290099B00D /* HttpPostClient.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		D4A5A8F728555FC90099B00D /* UserCases */ = {
+			isa = PBXGroup;
+			children = (
+				D4A5A8DE28554F570099B00D /* AddAccountRemoteTests.swift */,
+			);
+			path = UserCases;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
