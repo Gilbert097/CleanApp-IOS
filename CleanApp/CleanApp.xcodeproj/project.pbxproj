@@ -13,6 +13,7 @@
 		D4A5A8DF28554F570099B00D /* AddAccountRemoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8DE28554F570099B00D /* AddAccountRemoteTests.swift */; };
 		D4A5A8E828554F780099B00D /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
 		D4A5A8E928554F780099B00D /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D4A5A8EE28555E620099B00D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8ED28555E620099B00D /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		D4A5A8D228554F570099B00D /* Data.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Data.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A5A8D928554F570099B00D /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A5A8DE28554F570099B00D /* AddAccountRemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountRemoteTests.swift; sourceTree = "<group>"; };
+		D4A5A8ED28555E620099B00D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			children = (
 				D4A5A8C928554D9F0099B00D /* AddAccount.swift */,
 				D4A5A8CB28554ECD0099B00D /* AccountModel.swift */,
+				D4A5A8ED28555E620099B00D /* Model.swift */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4A5A8EE28555E620099B00D /* Model.swift in Sources */,
 				D4A5A8CA28554D9F0099B00D /* AddAccount.swift in Sources */,
 				D4A5A8CC28554ECD0099B00D /* AccountModel.swift in Sources */,
 			);
