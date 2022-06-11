@@ -30,31 +30,16 @@ protocol HttpPostClient {
 class AddAccountRemoteTests: XCTestCase {
 
     func test_add_should_call_httpClient_with_correct_url() throws {
-        let url = URL(string: "http://any-url.com")
-        let httpClientSpy = HttpClientSpy()
-        let sut = AddAccountRemote(url: url!, httpPostClient: httpClientSpy)
-        let addAccountModel = AddAccountModel(
-            name: "any_name",
-            email:  "any_name@mail.com",
-            password: "any_password",
-            passwordConfirmation: "any_password"
-        )
+        let url = URL(string: "http://any-url.com")!
+        let (sut, httpClientSpy) = makeSut(url: url)
+        let addAccountModel = makeAddAccountModel()
         sut.add(addAccountModel: addAccountModel)
         XCTAssertEqual(httpClientSpy.url, url)
     }
     
     func test_add_should_call_httpClient_with_correct_data() throws {
-        let httpClientSpy = HttpClientSpy()
-        let sut = AddAccountRemote(
-            url: URL(string: "http://any-url.com")!,
-            httpPostClient: httpClientSpy
-        )
-        let addAccountModel = AddAccountModel(
-            name: "any_name",
-            email:  "any_name@mail.com",
-            password: "any_password",
-            passwordConfirmation: "any_password"
-        )
+        let (sut, httpClientSpy)  = makeSut()
+        let addAccountModel = makeAddAccountModel()
         sut.add(addAccountModel: addAccountModel)
         
         let data = try? JSONEncoder().encode(addAccountModel)
@@ -63,6 +48,24 @@ class AddAccountRemoteTests: XCTestCase {
 }
 
 extension AddAccountRemoteTests {
+    
+    func makeSut(
+        url: URL = URL(string: "http://any-url.com")!
+    ) -> (sut: AddAccountRemote, httpClientSpy: HttpClientSpy) {
+        let httpClientSpy = HttpClientSpy()
+        let sut = AddAccountRemote(url: url, httpPostClient: httpClientSpy)
+        return (sut, httpClientSpy)
+    }
+    
+    func makeAddAccountModel() -> AddAccountModel {
+       return AddAccountModel(
+            name: "any_name",
+            email:  "any_name@mail.com",
+            password: "any_password",
+            passwordConfirmation: "any_password"
+        )
+    }
+    
     class HttpClientSpy: HttpPostClient {
         var url: URL?
         var data: Data?
