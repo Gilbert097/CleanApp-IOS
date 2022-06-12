@@ -17,7 +17,9 @@ public final class AddAccountRemote {
         self.httpPostClient = httpPostClient
     }
     
-    public func add(addAccountModel: AddAccountModel) {
-        httpPostClient.post(to: url, with: addAccountModel.toData())
+    public func add(addAccountModel: AddAccountModel, completion: @escaping (DomainError) -> Void) {
+        httpPostClient.post(to: url, with: addAccountModel.toData()) { error in
+            completion(.unexpected)
+        }
     }
 }
