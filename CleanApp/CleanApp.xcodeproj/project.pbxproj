@@ -146,8 +146,8 @@
 		D4A5A8DD28554F570099B00D /* DataTests */ = {
 			isa = PBXGroup;
 			children = (
-				D4A5A903285815570099B00D /* Http */,
 				D4A5A9002858149C0099B00D /* Helpers */,
+				D4A5A903285815570099B00D /* Http */,
 				D4A5A8F728555FC90099B00D /* UserCases */,
 			);
 			path = DataTests;
