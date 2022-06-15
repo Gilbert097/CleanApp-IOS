@@ -99,29 +99,12 @@ extension AddAccountRemoteTests {
         wait(for: [exp], timeout: 1)
     }
     
-    func makeInvalidData() -> Data {
-        return Data("invalid_data".utf8)
-    }
-    
-    func makeUrl() -> URL {
-        return URL(string: "http://any-url.com")!
-    }
-    
     func makeAddAccountModel() -> AddAccountModel {
         return AddAccountModel(
             name: "any_name",
             email:  "any_name@mail.com",
             password: "any_password",
             passwordConfirmation: "any_password"
-        )
-    }
-    
-    func makeAccountModel() -> AccountModel {
-        return AccountModel(
-            id: "any_id",
-            name: "any_name",
-            email: "any_name@mail.com",
-            password: "any_password"
         )
     }
 }

@@ -21,6 +21,8 @@
 		D4A5A902285814C60099B00D /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A901285814C60099B00D /* XCTestCase+Extension.swift */; };
 		D4A5A905285815650099B00D /* HttpClientSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A904285815650099B00D /* HttpClientSpy.swift */; };
 		D4A5A906285961DF0099B00D /* HttpError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8FB2856B3590099B00D /* HttpError.swift */; };
+		D4A5A908285962900099B00D /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A907285962900099B00D /* TestFactories.swift */; };
+		D4A5A90A285962AE0099B00D /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		D4A5A8FE2856BC7D0099B00D /* Data+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		D4A5A901285814C60099B00D /* XCTestCase+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extension.swift"; sourceTree = "<group>"; };
 		D4A5A904285815650099B00D /* HttpClientSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpClientSpy.swift; sourceTree = "<group>"; };
+		D4A5A907285962900099B00D /* TestFactories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestFactories.swift; sourceTree = "<group>"; };
+		D4A5A909285962AE0099B00D /* AccountModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountModelFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,6 +222,8 @@
 			isa = PBXGroup;
 			children = (
 				D4A5A901285814C60099B00D /* XCTestCase+Extension.swift */,
+				D4A5A907285962900099B00D /* TestFactories.swift */,
+				D4A5A909285962AE0099B00D /* AccountModelFactory.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -402,6 +408,8 @@
 			files = (
 				D4A5A902285814C60099B00D /* XCTestCase+Extension.swift in Sources */,
 				D4A5A905285815650099B00D /* HttpClientSpy.swift in Sources */,
+				D4A5A908285962900099B00D /* TestFactories.swift in Sources */,
+				D4A5A90A285962AE0099B00D /* AccountModelFactory.swift in Sources */,
 				D4A5A8DF28554F570099B00D /* AddAccountRemoteTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
