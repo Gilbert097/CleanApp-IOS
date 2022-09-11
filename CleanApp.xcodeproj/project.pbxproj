@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D49880D428CE5D14004F21D5 /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8FE2856BC7D0099B00D /* Data+Extension.swift */; };
 		D4A5A8CA28554D9F0099B00D /* AddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8C928554D9F0099B00D /* AddAccount.swift */; };
 		D4A5A8CC28554ECD0099B00D /* AccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8CB28554ECD0099B00D /* AccountModel.swift */; };
 		D4A5A8DA28554F570099B00D /* Data.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8D228554F570099B00D /* Data.framework */; };
@@ -570,6 +571,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D4A5A92B285AB5E90099B00D /* TestFactories.swift in Sources */,
+				D49880D428CE5D14004F21D5 /* Data+Extension.swift in Sources */,
 				D4A5A92A285AB5E40099B00D /* XCTestCase+Extension.swift in Sources */,
 				D4A5A91D285AB4360099B00D /* AlamofireAdapterTests.swift in Sources */,
 			);
