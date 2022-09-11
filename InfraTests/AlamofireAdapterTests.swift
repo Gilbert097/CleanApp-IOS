@@ -18,10 +18,11 @@ class AlamofireAdapter {
     
     func post(to url: URL, with data: Data?, completion: @escaping (Result<Data, HttpError>) -> Void) {
         session.request(url, method: .post, parameters: data?.toJson(), encoding: JSONEncoding.default).responseData { dataResponse in
+            guard dataResponse.response?.statusCode != nil else { return completion(.failure(.noConnectivity)) }
             switch dataResponse.result {
-            case .success(_):
-                break
-            case .failure(_):
+            case .success(let data):
+                completion(.success(data))
+            case .failure:
                 completion(.failure(.noConnectivity))
             }
         }
@@ -46,19 +47,15 @@ class AlamofireAdapterTests: XCTestCase {
     
     func test_post_should_complete_with_error_when_request_completes_with_error() {
         expectResult(.failure(.noConnectivity), when: .init(data: nil, response: nil, error: makeError()))
-        /*let sut = makeSut()
-        UrlProtocolStub.simulate(data: nil, response: nil, error: makeError())
-        let exp = expectation(description: "waiting")
-        sut.post(to: makeUrl(), with: makeValidData()) { result in
-            switch result {
-            case .success(_):
-                XCTFail("Expected erro got \(result) instead.")
-            case .failure(let error):
-                XCTAssertEqual(error, .noConnectivity)
-            }
-            exp.fulfill()
-        }
-        wait(for: [exp], timeout: 1)*/
+    }
+    
+    func test_post_should_complete_with_error_on_all_invalid_cases() {
+        expectResult(.failure(.noConnectivity), when: .init(data: makeValidData(), response: makeResponse(), error: makeError()))
+        expectResult(.failure(.noConnectivity), when: .init(data: makeValidData(), response: nil, error: makeError()))
+        expectResult(.failure(.noConnectivity), when: .init(data: makeValidData(), response: nil, error: nil))
+        expectResult(.failure(.noConnectivity), when: .init(data: nil, response: makeResponse(), error: makeError()))
+        expectResult(.failure(.noConnectivity), when: .init(data: nil, response: makeResponse(), error: nil))
+        expectResult(.failure(.noConnectivity), when: .init(data: nil, response: nil, error: nil))
     }
 }
 
