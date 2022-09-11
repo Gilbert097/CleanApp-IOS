@@ -16,7 +16,7 @@ class AddAccountIntegrationTests: XCTestCase {
         let alamofireAdapter = AlamofireAdapter()
         let url = URL(string: "https://fordevs.herokuapp.com/api/signup")!
         let sut = AddAccountRemote(url: url, httpPostClient: alamofireAdapter)
-        let addAccountModel = AddAccountModel(name: "Gilberto Silva", email: "gilberto.silva.teste123@gmail.com", password: "secret", passwordConfirmation: "secret")
+        let addAccountModel = AddAccountModel(name: "Gilberto Silva", email: "\(UUID().uuidString)@gmail.com", password: "secret", passwordConfirmation: "secret")
         
         let exp = expectation(description: "Waiting")
         sut.add(addAccountModel: addAccountModel) { result in
