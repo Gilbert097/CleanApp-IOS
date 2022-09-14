@@ -9,9 +9,11 @@ import Foundation
 
 public final class SignUpPresenter {
     let alertView: AlertView
+    private let emailValidator: EmailValidator
     
-    public init(alertView: AlertView) {
+    public init(alertView: AlertView, emailValidator: EmailValidator) {
         self.alertView = alertView
+        self.emailValidator = emailValidator
     }
     
     public func signUp(viewModel: SignUpViewModel){
@@ -32,16 +34,17 @@ public final class SignUpPresenter {
         } else if viewModel.password != viewModel.passwordConfirmation {
             return "Falha ao confirmar senha"
         }
+        _ = self.emailValidator.isValid(email: viewModel.email!)
         return nil
     }
 }
 
 public struct SignUpViewModel{
    
-    var name: String?
-    var email: String?
-    var password: String?
-    var passwordConfirmation: String?
+   public var name: String?
+   public var email: String?
+   public var password: String?
+   public var passwordConfirmation: String?
     
     public init(
         name: String? = nil,
