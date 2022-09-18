@@ -29,7 +29,8 @@ public final class SignUpPresenter {
                 password: viewModel.password!,
                 passwordConfirmation: viewModel.passwordConfirmation!
             )
-            self.addAccount.add(addAccountModel: addAccountModel) { result in
+            self.addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
+                guard let self = self else { return }
                 switch result {
                 case .success(_):
                    break
