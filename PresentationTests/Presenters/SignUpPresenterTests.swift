@@ -60,6 +60,13 @@ class SignUpPresenterTests: XCTestCase {
         result.sut.signUp(viewModel: makeSignUpViewModel())
         XCTAssertEqual(result.addAccountSpy.addAccountModel, makeAddAccountModel())
     }
+    
+    func test_signUp_should_show_error_message_if_iaddAccount_fails() throws {
+        let result = makeSut()
+        result.sut.signUp(viewModel: makeSignUpViewModel())
+        result.addAccountSpy.completeWithError(.unexpected)
+        XCTAssertEqual(result.alertViewSpy.viewModel, makeErrorAlertViewModel(message: "Algo inesperado aconteceu, tente novamente em alguns instantes."))
+    }
 }
 
 extension SignUpPresenterTests {
@@ -96,6 +103,10 @@ extension SignUpPresenterTests {
         return AlertViewModel(title: "Falha na validação", message: "O campo \(fieldName) é inválido")
     }
     
+    func makeErrorAlertViewModel(message: String) -> AlertViewModel {
+        return AlertViewModel(title: "Erro", message: message)
+    }
+    
     class EmailValidatorSpy: EmailValidator {
         var isvalid = true
         var email: String?
@@ -120,10 +131,16 @@ extension SignUpPresenterTests {
     
     class AddAccountSpy: AddAccount {
         var addAccountModel: AddAccountModel?
+        var completion: ((Result<AccountModel, DomainError>) -> Void)?
         
         func add(addAccountModel: AddAccountModel,
                  completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
             self.addAccountModel = addAccountModel
+            self.completion = completion
+        }
+        
+        func completeWithError(_ error: DomainError) {
+            self.completion?(.failure(error))
         }
     }
 }
