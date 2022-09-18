@@ -12,11 +12,16 @@ public final class SignUpPresenter {
     let alertView: AlertView
     private let emailValidator: EmailValidator
     private let addAccount: AddAccount
+    private let loadingView: LoagingView
     
-    public init(alertView: AlertView, emailValidator: EmailValidator, addAccount: AddAccount) {
+    public init(alertView: AlertView,
+                emailValidator: EmailValidator,
+                addAccount: AddAccount,
+                loadingView: LoagingView) {
         self.alertView = alertView
         self.emailValidator = emailValidator
         self.addAccount = addAccount
+        self.loadingView = loadingView
     }
     
     public func signUp(viewModel: SignUpViewModel){
@@ -29,6 +34,7 @@ public final class SignUpPresenter {
                 password: viewModel.password!,
                 passwordConfirmation: viewModel.passwordConfirmation!
             )
+            self.loadingView.display(viewModel: .init(isLoading: true))
             self.addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
