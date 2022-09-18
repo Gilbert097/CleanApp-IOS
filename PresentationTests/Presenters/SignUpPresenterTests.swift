@@ -7,6 +7,7 @@
 
 import XCTest
 import Presentation
+import Domain
 
 class SignUpPresenterTests: XCTestCase {
     
@@ -40,6 +41,13 @@ class SignUpPresenterTests: XCTestCase {
         XCTAssertEqual(result.alertViewSpy.viewModel, makeInvalidAlertViewModel(fieldName: "Confirmar Senha"))
     }
     
+    func test_signUp_should_show_error_message_if_invalid_email_is_provided() throws {
+        let result = makeSut()
+        result.emailValidatorSpy.simulateInvalidEmail()
+        result.sut.signUp(viewModel: makeSignUpViewModel())
+        XCTAssertEqual(result.alertViewSpy.viewModel, makeInvalidAlertViewModel(fieldName: "Email"))
+    }
+    
     func test_signUp_should_call_emailValidator_with_correct_email() throws {
         let result = makeSut()
         let signUpViewModel = makeSignUpViewModel()
@@ -47,28 +55,33 @@ class SignUpPresenterTests: XCTestCase {
         XCTAssertEqual(result.emailValidatorSpy.email, signUpViewModel.email)
     }
     
-    func test_signUp_should_show_error_message_if_invalid_email_is_provided() throws {
+    func test_signUp_should_call_addAccount_with_correct_values() throws {
         let result = makeSut()
-        result.emailValidatorSpy.simulateInvalidEmail()
         result.sut.signUp(viewModel: makeSignUpViewModel())
-        XCTAssertEqual(result.alertViewSpy.viewModel, makeInvalidAlertViewModel(fieldName: "Email"))
+        XCTAssertEqual(result.addAccountSpy.addAccountModel, makeAddAccountModel())
     }
 }
 
 extension SignUpPresenterTests {
     
-    typealias SUT = (sut: SignUpPresenter, alertViewSpy: AlertViewSpy, emailValidatorSpy: EmailValidatorSpy)
+    typealias SUT = (sut: SignUpPresenter,
+                     alertViewSpy: AlertViewSpy,
+                     emailValidatorSpy: EmailValidatorSpy,
+                     addAccountSpy: AddAccountSpy)
     
     func makeSut() -> SUT {
         let alertViewSpy = AlertViewSpy()
         let emailValidatorSpy = EmailValidatorSpy()
-        let sut = SignUpPresenter(alertView: alertViewSpy, emailValidator: emailValidatorSpy)
-        return (sut, alertViewSpy, emailValidatorSpy)
+        let addAccountSpy = AddAccountSpy()
+        let sut = SignUpPresenter(alertView: alertViewSpy,
+                                  emailValidator: emailValidatorSpy,
+                                  addAccount: addAccountSpy)
+        return (sut, alertViewSpy, emailValidatorSpy, addAccountSpy)
     }
     
     func makeSignUpViewModel(
         name: String? = "any_name",
-        email: String? = "invalid_email@mail.com",
+        email: String? = "any_email@mail.com",
         password: String? =  "any_password",
         passwordConfirmation: String? = "any_password"
     ) -> SignUpViewModel {
@@ -105,4 +118,12 @@ extension SignUpPresenterTests {
         }
     }
     
+    class AddAccountSpy: AddAccount {
+        var addAccountModel: AddAccountModel?
+        
+        func add(addAccountModel: AddAccountModel,
+                 completion: @escaping (Result<AccountModel, DomainError>) -> Void) {
+            self.addAccountModel = addAccountModel
+        }
+    }
 }

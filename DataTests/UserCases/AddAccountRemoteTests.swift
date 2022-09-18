@@ -75,8 +75,6 @@ extension AddAccountRemoteTests {
         return (sut, httpClientSpy)
     }
     
-    
-    
     func expect(
         _ sut: AddAccountRemote,
         completeWith expectedResult: Result<AccountModel, DomainError>,
@@ -99,12 +97,4 @@ extension AddAccountRemoteTests {
         wait(for: [exp], timeout: 1)
     }
     
-    func makeAddAccountModel() -> AddAccountModel {
-        return AddAccountModel(
-            name: "any_name",
-            email:  "any_name@mail.com",
-            password: "any_password",
-            passwordConfirmation: "any_password"
-        )
-    }
 }
