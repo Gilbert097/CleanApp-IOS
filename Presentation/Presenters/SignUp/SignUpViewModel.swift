@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Domain
 
 public struct SignUpViewModel{
    
@@ -24,5 +25,14 @@ public struct SignUpViewModel{
         self.email = email
         self.password = password
         self.passwordConfirmation = passwordConfirmation
+    }
+    
+    func toAddAccountModel() -> AddAccountModel {
+        return AddAccountModel(
+            name: self.name!,
+            email: self.email!,
+            password: self.password!,
+            passwordConfirmation: self.passwordConfirmation!
+        )
     }
 }

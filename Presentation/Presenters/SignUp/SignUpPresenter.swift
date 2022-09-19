@@ -28,14 +28,8 @@ public final class SignUpPresenter {
         if let message = validate(viewModel: viewModel) {
             self.alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {
-            let addAccountModel = AddAccountModel(
-                name: viewModel.name!,
-                email: viewModel.email!,
-                password: viewModel.password!,
-                passwordConfirmation: viewModel.passwordConfirmation!
-            )
             self.loadingView.display(viewModel: .init(isLoading: true))
-            self.addAccount.add(addAccountModel: addAccountModel) { [weak self] result in
+            self.addAccount.add(addAccountModel: viewModel.toAddAccountModel()) { [weak self] result in
                 guard let self = self else { return }
                 switch result {
                 case .success:
