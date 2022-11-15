@@ -19,8 +19,21 @@ final class SignUpViewController: UIViewController {
         return view
     }()
     
+    public let saveButton = UIButton()
+    
+    public var signUp: ((SignUpViewModel) -> Void)?
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
+        configure()
+    }
+    
+    private func configure() {
+        self.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc private func saveButtonTapped() {
+        self.signUp?(SignUpViewModel())
     }
 }
 
