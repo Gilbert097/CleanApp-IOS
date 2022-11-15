@@ -7,6 +7,7 @@
 
 import Foundation
 import UIKit
+import Presentation
 
 final class SignUpViewController: UIViewController {
     
@@ -23,6 +24,7 @@ final class SignUpViewController: UIViewController {
     }
 }
 
+// MARK: - ViewCode
 extension SignUpViewController: ViewCode {
     
     func buildViewHierarchy() {
@@ -34,5 +36,17 @@ extension SignUpViewController: ViewCode {
             self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             self.loadingIndicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
+    }
+}
+
+// MARK: - LoagingView
+extension SignUpViewController: LoagingView {
+    
+    func display(viewModel: LoagingViewModel) {
+        if viewModel.isLoading {
+            self.loadingIndicatorView.startAnimating()
+        } else {
+            self.loadingIndicatorView.stopAnimating()
+        }
     }
 }
