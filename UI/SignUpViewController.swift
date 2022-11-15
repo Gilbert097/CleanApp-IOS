@@ -50,3 +50,11 @@ extension SignUpViewController: LoagingView {
         }
     }
 }
+
+// MARK: - AlertView
+extension SignUpViewController: AlertView {
+    
+    func showMessage(viewModel: Presentation.AlertViewModel) {
+        
+    }
+}
