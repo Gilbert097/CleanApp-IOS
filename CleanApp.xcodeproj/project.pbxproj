@@ -26,6 +26,7 @@
 		D476BCA228D950A800C7E87E /* Presentation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D49880F328D00D0B004F21D5 /* Presentation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D476BCA728D952B300C7E87E /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BCA628D952B300C7E87E /* SignUpViewController.swift */; };
 		D476BCA928D9530C00C7E87E /* ViewCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BCA828D9530C00C7E87E /* ViewCode.swift */; };
+		D47DEC9429245A77005E654C /* TestExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D47DEC9329245A77005E654C /* TestExtension.swift */; };
 		D49880D728CE8226004F21D5 /* AlamofireAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49880D628CE8226004F21D5 /* AlamofireAdapter.swift */; };
 		D49880DA28CE82F8004F21D5 /* UrlProtocolStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49880D828CE82E2004F21D5 /* UrlProtocolStub.swift */; };
 		D49880E328CE8C20004F21D5 /* AddAccountIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D49880E228CE8C20004F21D5 /* AddAccountIntegrationTests.swift */; };
@@ -182,6 +183,7 @@
 		D476BC9728D94F1800C7E87E /* SignUpViewControllerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewControllerTests.swift; sourceTree = "<group>"; };
 		D476BCA628D952B300C7E87E /* SignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
 		D476BCA828D9530C00C7E87E /* ViewCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCode.swift; sourceTree = "<group>"; };
+		D47DEC9329245A77005E654C /* TestExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestExtension.swift; sourceTree = "<group>"; };
 		D49880D628CE8226004F21D5 /* AlamofireAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlamofireAdapter.swift; sourceTree = "<group>"; };
 		D49880D828CE82E2004F21D5 /* UrlProtocolStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlProtocolStub.swift; sourceTree = "<group>"; };
 		D49880E028CE8C20004F21D5 /* UseCasesIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UseCasesIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -390,6 +392,7 @@
 		D476BC9628D94F1800C7E87E /* UITests */ = {
 			isa = PBXGroup;
 			children = (
+				D47DEC9229245A57005E654C /* Helpers */,
 				D47DEC9129245953005E654C /* Screens */,
 			);
 			path = UITests;
@@ -425,6 +428,14 @@
 				D47DEC8F29245920005E654C /* SignUp */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		D47DEC9229245A57005E654C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D47DEC9329245A77005E654C /* TestExtension.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		D49880D528CE8211004F21D5 /* Http */ = {
@@ -1034,6 +1045,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D476BC9828D94F1800C7E87E /* SignUpViewControllerTests.swift in Sources */,
+				D47DEC9429245A77005E654C /* TestExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
