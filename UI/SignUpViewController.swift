@@ -20,6 +20,10 @@ final class SignUpViewController: UIViewController {
     }()
     
     public let saveButton = UIButton()
+    public let nameTextField = UITextField()
+    public let emailTextField = UITextField()
+    public let passwordTextField = UITextField()
+    public let passwordConfirmationTextField = UITextField()
     
     public var signUp: ((SignUpViewModel) -> Void)?
     
@@ -33,7 +37,13 @@ final class SignUpViewController: UIViewController {
     }
     
     @objc private func saveButtonTapped() {
-        self.signUp?(SignUpViewModel())
+        let viewModel = SignUpViewModel(
+            name: nameTextField.text,
+            email: emailTextField.text,
+            password: passwordTextField.text,
+            passwordConfirmation: passwordConfirmationTextField.text
+        )
+        self.signUp?(viewModel)
     }
 }
 
@@ -41,7 +51,12 @@ final class SignUpViewController: UIViewController {
 extension SignUpViewController: ViewCode {
     
     func buildViewHierarchy() {
-        self.view.addSubview(loadingIndicatorView)
+        self.view.addSubviews([loadingIndicatorView,
+                               saveButton,
+                               nameTextField,
+                               emailTextField,
+                               passwordTextField,
+                               passwordConfirmationTextField])
     }
     
     func setupConstraints() {
@@ -69,5 +84,14 @@ extension SignUpViewController: AlertView {
     
     func showMessage(viewModel: Presentation.AlertViewModel) {
         
+    }
+}
+
+extension UIView {
+    
+    func addSubviews(_ views: [UIView]) {
+        views.forEach { view in
+            addSubview(view)
+        }
     }
 }
