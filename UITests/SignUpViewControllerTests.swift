@@ -6,10 +6,14 @@
 //
 
 import XCTest
+import UIKit
+@testable import UI
 
 class SignUpViewControllerTests: XCTestCase {
 
-    func test_() throws {
-        
+    func test_loading_is_hidden_on_start() throws {
+        let sut = SignUpViewController()
+        sut.loadViewIfNeeded()
+        XCTAssertEqual(sut.loadingIndicatorView.isAnimating, false)
     }
 }
