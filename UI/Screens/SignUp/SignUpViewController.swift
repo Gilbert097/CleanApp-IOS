@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 import Presentation
 
-final class SignUpViewController: UIViewController {
+public final class SignUpViewController: UIViewController {
     
     public let loadingIndicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView()
@@ -70,7 +70,7 @@ extension SignUpViewController: ViewCode {
 // MARK: - LoagingView
 extension SignUpViewController: LoagingView {
     
-    func display(viewModel: LoagingViewModel) {
+    public func display(viewModel: LoagingViewModel) {
         if viewModel.isLoading {
             self.loadingIndicatorView.startAnimating()
         } else {
@@ -82,7 +82,7 @@ extension SignUpViewController: LoagingView {
 // MARK: - AlertView
 extension SignUpViewController: AlertView {
     
-    func showMessage(viewModel: Presentation.AlertViewModel) {
+    public func showMessage(viewModel: Presentation.AlertViewModel) {
         let alert = UIAlertController(
             title: viewModel.title,
             message: viewModel.message,
