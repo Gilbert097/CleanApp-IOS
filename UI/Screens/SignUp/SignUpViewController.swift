@@ -27,6 +27,15 @@ public final class SignUpViewController: UIViewController {
         return view
     }()
     
+    public let titleLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.font = .systemFont(ofSize: 30, weight: .bold)
+        view.text = "FavLang"
+        view.textColor = UIColor.systemIndigo
+        return view
+    }()
+    
     public let saveButton = UIButton()
     public let nameTextField = UITextField()
     public let emailTextField = UITextField()
@@ -61,6 +70,7 @@ extension SignUpViewController: ViewCode {
     
     func setupViewHierarchy() {
         self.view.addSubviews([iconLabel,
+                               titleLabel,
                                loadingIndicatorView,
                                saveButton,
                                nameTextField,
@@ -72,11 +82,19 @@ extension SignUpViewController: ViewCode {
     func setupConstraints() {
         let safeArea = self.view.safeAreaLayoutGuide
         
+        // iconLabel
         NSLayoutConstraint.activate([
             self.iconLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
             self.iconLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
         
+        // titleLabel
+        NSLayoutConstraint.activate([
+            self.titleLabel.topAnchor.constraint(equalTo: iconLabel.bottomAnchor, constant: 10),
+            self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
+        // loadingIndicatorView
         NSLayoutConstraint.activate([
             self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             self.loadingIndicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
@@ -84,7 +102,7 @@ extension SignUpViewController: ViewCode {
     }
     
     func setupAdditionalConfiguration() {
-        self.view.backgroundColor = .red
+        self.view.backgroundColor = .black
     }
 }
 
