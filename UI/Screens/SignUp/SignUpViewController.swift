@@ -19,6 +19,14 @@ public final class SignUpViewController: UIViewController {
         return view
     }()
     
+    public let iconLabel: UILabel = {
+        let view = UILabel()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.font = .systemFont(ofSize: 90)
+        view.text = "📱"
+        return view
+    }()
+    
     public let saveButton = UIButton()
     public let nameTextField = UITextField()
     public let emailTextField = UITextField()
@@ -52,7 +60,8 @@ public final class SignUpViewController: UIViewController {
 extension SignUpViewController: ViewCode {
     
     func setupViewHierarchy() {
-        self.view.addSubviews([loadingIndicatorView,
+        self.view.addSubviews([iconLabel,
+                               loadingIndicatorView,
                                saveButton,
                                nameTextField,
                                emailTextField,
@@ -61,6 +70,13 @@ extension SignUpViewController: ViewCode {
     }
     
     func setupConstraints() {
+        let safeArea = self.view.safeAreaLayoutGuide
+        
+        NSLayoutConstraint.activate([
+            self.iconLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
+            self.iconLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
         NSLayoutConstraint.activate([
             self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             self.loadingIndicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
