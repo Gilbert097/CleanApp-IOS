@@ -36,11 +36,25 @@ public final class SignUpViewController: UIViewController {
         return view
     }()
     
-    public let saveButton = UIButton()
-    public let nameTextField = UITextField()
+    public let nameTextField: UITextField = {
+        let view = UITextField()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.placeholder = "Nome"
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.borderStyle = UITextField.BorderStyle.roundedRect
+        view.autocorrectionType = UITextAutocorrectionType.no
+        view.keyboardType = UIKeyboardType.default
+        view.returnKeyType = UIReturnKeyType.done
+        view.clearButtonMode = UITextField.ViewMode.whileEditing
+        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        return view
+    }()
+    
     public let emailTextField = UITextField()
     public let passwordTextField = UITextField()
     public let passwordConfirmationTextField = UITextField()
+    
+    public let saveButton = UIButton()
     
     public var signUp: ((SignUpViewModel) -> Void)?
     
@@ -71,12 +85,12 @@ extension SignUpViewController: ViewCode {
     func setupViewHierarchy() {
         self.view.addSubviews([iconLabel,
                                titleLabel,
-                               loadingIndicatorView,
-                               saveButton,
                                nameTextField,
+                               saveButton,
                                emailTextField,
                                passwordTextField,
-                               passwordConfirmationTextField])
+                               passwordConfirmationTextField,
+                               loadingIndicatorView,])
     }
     
     func setupConstraints() {
@@ -92,6 +106,14 @@ extension SignUpViewController: ViewCode {
         NSLayoutConstraint.activate([
             self.titleLabel.topAnchor.constraint(equalTo: iconLabel.bottomAnchor, constant: 10),
             self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+        ])
+        
+        // nameTextField
+        NSLayoutConstraint.activate([
+            self.nameTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 50),
+            self.nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
+            self.nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
+            self.nameTextField.heightAnchor.constraint(equalToConstant: 50)
         ])
         
         // loadingIndicatorView
