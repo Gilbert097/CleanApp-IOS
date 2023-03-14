@@ -50,9 +50,47 @@ public final class SignUpViewController: UIViewController {
         return view
     }()
     
-    public let emailTextField = UITextField()
-    public let passwordTextField = UITextField()
-    public let passwordConfirmationTextField = UITextField()
+    public let emailTextField: UITextField = {
+        let view = UITextField()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.placeholder = "Email"
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.borderStyle = UITextField.BorderStyle.roundedRect
+        view.autocorrectionType = UITextAutocorrectionType.no
+        view.keyboardType = UIKeyboardType.default
+        view.returnKeyType = UIReturnKeyType.done
+        view.clearButtonMode = UITextField.ViewMode.whileEditing
+        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        return view
+    }()
+    
+    public let passwordTextField: UITextField = {
+        let view = UITextField()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.placeholder = "Senha"
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.borderStyle = UITextField.BorderStyle.roundedRect
+        view.autocorrectionType = UITextAutocorrectionType.no
+        view.keyboardType = UIKeyboardType.default
+        view.returnKeyType = UIReturnKeyType.done
+        view.clearButtonMode = UITextField.ViewMode.whileEditing
+        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        return view
+    }()
+    
+    public let passwordConfirmationTextField: UITextField = {
+        let view = UITextField()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.placeholder = "Confirmar senha"
+        view.font = UIFont.systemFont(ofSize: 14)
+        view.borderStyle = UITextField.BorderStyle.roundedRect
+        view.autocorrectionType = UITextAutocorrectionType.no
+        view.keyboardType = UIKeyboardType.default
+        view.returnKeyType = UIReturnKeyType.done
+        view.clearButtonMode = UITextField.ViewMode.whileEditing
+        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
+        return view
+    }()
     
     public let saveButton = UIButton()
     
@@ -86,10 +124,10 @@ extension SignUpViewController: ViewCode {
         self.view.addSubviews([iconLabel,
                                titleLabel,
                                nameTextField,
-                               saveButton,
                                emailTextField,
                                passwordTextField,
                                passwordConfirmationTextField,
+                               saveButton,
                                loadingIndicatorView,])
     }
     
@@ -114,6 +152,30 @@ extension SignUpViewController: ViewCode {
             self.nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
             self.nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
             self.nameTextField.heightAnchor.constraint(equalToConstant: 50)
+        ])
+        
+        // emailTextField
+        NSLayoutConstraint.activate([
+            self.emailTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 10),
+            self.emailTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
+            self.emailTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
+            self.emailTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
+        ])
+        
+        // passwordTextField
+        NSLayoutConstraint.activate([
+            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 10),
+            self.passwordTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
+            self.passwordTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
+            self.passwordTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
+        ])
+        
+        // passwordConfirmationTextField
+        NSLayoutConstraint.activate([
+            self.passwordConfirmationTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 10),
+            self.passwordConfirmationTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
+            self.passwordConfirmationTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
+            self.passwordConfirmationTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
         ])
         
         // loadingIndicatorView
