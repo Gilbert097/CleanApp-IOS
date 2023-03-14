@@ -27,8 +27,9 @@
 		D43804C129C10AFF0062A70E /* Validation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4E2349129BFBF4B00CF27C8 /* Validation.framework */; };
 		D43804C229C10AFF0062A70E /* Validation.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4E2349129BFBF4B00CF27C8 /* Validation.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D43804C829C10BC30062A70E /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804C729C10BC30062A70E /* SignUpFactory.swift */; };
+		D43804C929C1127A0062A70E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
+		D43804CA29C1127A0062A70E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
-		D476BC6828D1583D00C7E87E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC6F28D15C0B00C7E87E /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -243,6 +244,17 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D43804CB29C1127A0062A70E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D43804CA29C1127A0062A70E /* Domain.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D476BCA528D950A800C7E87E /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -406,7 +418,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D476BC6828D1583D00C7E87E /* Domain.framework in Frameworks */,
+				D43804C929C1127A0062A70E /* Domain.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1075,6 +1087,7 @@
 				D49880EF28D00D0B004F21D5 /* Sources */,
 				D49880F028D00D0B004F21D5 /* Frameworks */,
 				D49880F128D00D0B004F21D5 /* Resources */,
+				D43804CB29C1127A0062A70E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1727,7 +1740,7 @@
 				INFOPLIST_FILE = Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
@@ -1756,7 +1769,7 @@
 				INFOPLIST_FILE = Main/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.1;

@@ -29,6 +29,7 @@ public final class SignUpViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
         configure()
     }
     
@@ -50,7 +51,7 @@ public final class SignUpViewController: UIViewController {
 // MARK: - ViewCode
 extension SignUpViewController: ViewCode {
     
-    func buildViewHierarchy() {
+    func setupViewHierarchy() {
         self.view.addSubviews([loadingIndicatorView,
                                saveButton,
                                nameTextField,
@@ -64,6 +65,10 @@ extension SignUpViewController: ViewCode {
             self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
             self.loadingIndicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
         ])
+    }
+    
+    func setupAdditionalConfiguration() {
+        self.view.backgroundColor = .red
     }
 }
 

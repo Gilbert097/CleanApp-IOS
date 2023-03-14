@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ViewCode {
-    func buildViewHierarchy()
+    func setupViewHierarchy()
     func setupConstraints()
     func setupAdditionalConfiguration()
     func setupView()
@@ -16,7 +16,7 @@ protocol ViewCode {
 
 extension ViewCode {
     func setupView(){
-        buildViewHierarchy()
+        setupViewHierarchy()
         setupConstraints()
         setupAdditionalConfiguration()
     }
