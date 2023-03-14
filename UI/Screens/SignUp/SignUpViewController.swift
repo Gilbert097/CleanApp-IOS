@@ -36,59 +36,27 @@ public final class SignUpViewController: UIViewController {
         return view
     }()
     
-    public let nameTextField: UITextField = {
-        let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
+    public let nameTextField: MyTextField = {
+        let view = MyTextField()
         view.placeholder = "Nome"
-        view.font = UIFont.systemFont(ofSize: 14)
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return view
     }()
     
-    public let emailTextField: UITextField = {
-        let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
+    public let emailTextField: MyTextField = {
+        let view = MyTextField()
         view.placeholder = "Email"
-        view.font = UIFont.systemFont(ofSize: 14)
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return view
     }()
     
-    public let passwordTextField: UITextField = {
-        let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
+    public let passwordTextField: MyTextField = {
+        let view = MyTextField()
         view.placeholder = "Senha"
-        view.font = UIFont.systemFont(ofSize: 14)
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return view
     }()
     
-    public let passwordConfirmationTextField: UITextField = {
-        let view = UITextField()
-        view.translatesAutoresizingMaskIntoConstraints = false
+    public let passwordConfirmationTextField: MyTextField = {
+        let view = MyTextField()
         view.placeholder = "Confirmar senha"
-        view.font = UIFont.systemFont(ofSize: 14)
-        view.borderStyle = UITextField.BorderStyle.roundedRect
-        view.autocorrectionType = UITextAutocorrectionType.no
-        view.keyboardType = UIKeyboardType.default
-        view.returnKeyType = UIReturnKeyType.done
-        view.clearButtonMode = UITextField.ViewMode.whileEditing
-        view.contentVerticalAlignment = UIControl.ContentVerticalAlignment.center
         return view
     }()
     

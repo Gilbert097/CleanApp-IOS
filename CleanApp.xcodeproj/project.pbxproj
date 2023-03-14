@@ -29,6 +29,7 @@
 		D43804C829C10BC30062A70E /* SignUpFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804C729C10BC30062A70E /* SignUpFactory.swift */; };
 		D43804C929C1127A0062A70E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
 		D43804CA29C1127A0062A70E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D43804CE29C13B240062A70E /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804CD29C13B240062A70E /* MyTextField.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC6F28D15C0B00C7E87E /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */; };
@@ -314,6 +315,7 @@
 		D43804A029C1081B0062A70E /* MainUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITests.swift; sourceTree = "<group>"; };
 		D43804A229C1081B0062A70E /* MainUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		D43804C729C10BC30062A70E /* SignUpFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpFactory.swift; sourceTree = "<group>"; };
+		D43804CD29C13B240062A70E /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -526,6 +528,14 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		D43804CC29C13B180062A70E /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				D43804CD29C13B240062A70E /* MyTextField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		D476BC6528D1580D00C7E87E /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +623,7 @@
 		D476BC8C28D94F1800C7E87E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D43804CC29C13B180062A70E /* Components */,
 				D47DEC9529245B2C005E654C /* Helpers */,
 				D47DEC902924594D005E654C /* Screens */,
 				D476BCA828D9530C00C7E87E /* ViewCode.swift */,
@@ -1495,6 +1506,7 @@
 				D476BCA728D952B300C7E87E /* SignUpViewController.swift in Sources */,
 				D47DEC9729245B3F005E654C /* UIViewExtesion.swift in Sources */,
 				D476BCA928D9530C00C7E87E /* ViewCode.swift in Sources */,
+				D43804CE29C13B240062A70E /* MyTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
