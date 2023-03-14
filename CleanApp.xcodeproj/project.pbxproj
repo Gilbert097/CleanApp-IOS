@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D438047829C106E50062A70E /* EmailValidatorAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438047729C106E50062A70E /* EmailValidatorAdapter.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6828D1583D00C7E87E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
@@ -198,6 +199,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		D438047729C106E50062A70E /* EmailValidatorAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapter.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -714,6 +716,7 @@
 		D4E2349229BFBF4B00CF27C8 /* Validation */ = {
 			isa = PBXGroup;
 			children = (
+				D438047729C106E50062A70E /* EmailValidatorAdapter.swift */,
 			);
 			path = Validation;
 			sourceTree = "<group>";
@@ -1050,6 +1053,7 @@
 					};
 					D4E2349029BFBF4B00CF27C8 = {
 						CreatedOnToolsVersion = 14.1;
+						LastSwiftMigration = 1410;
 					};
 					D4E2349729BFBF4B00CF27C8 = {
 						CreatedOnToolsVersion = 14.1;
@@ -1287,6 +1291,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D438047829C106E50062A70E /* EmailValidatorAdapter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2001,6 +2006,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2025,6 +2031,7 @@
 				SKIP_INSTALL = YES;
 				SUPPORTED_PLATFORMS = "macosx iphoneos iphonesimulator";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -2033,6 +2040,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2064,6 +2072,7 @@
 		D4E234A429BFBF4B00CF27C8 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2082,6 +2091,7 @@
 		D4E234A529BFBF4B00CF27C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
