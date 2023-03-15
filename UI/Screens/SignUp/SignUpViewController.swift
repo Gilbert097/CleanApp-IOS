@@ -95,6 +95,10 @@ public final class SignUpViewController: UIViewController {
         configure()
     }
     
+    public override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     private func configure() {
         self.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
