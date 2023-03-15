@@ -12,9 +12,8 @@ import Presentation
 public final class SignUpViewController: UIViewController {
     
     public let loadingIndicatorView: UIActivityIndicatorView = {
-        let view = UIActivityIndicatorView()
+        let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.style = UIActivityIndicatorView.Style.large
         view.hidesWhenStopped = true
         return view
     }()
@@ -45,22 +44,48 @@ public final class SignUpViewController: UIViewController {
     public let emailTextField: MyTextField = {
         let view = MyTextField()
         view.placeholder = "Email"
+        view.keyboardType = .emailAddress
         return view
     }()
     
     public let passwordTextField: MyTextField = {
         let view = MyTextField()
         view.placeholder = "Senha"
+        view.isSecureTextEntry = true
         return view
     }()
     
     public let passwordConfirmationTextField: MyTextField = {
         let view = MyTextField()
         view.placeholder = "Confirmar senha"
+        view.isSecureTextEntry = true
         return view
     }()
     
-    public let saveButton = UIButton()
+    public let saveButton: UIButton = {
+        let view = UIButton()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.clipsToBounds = true
+        view.layer.cornerRadius = 5
+        view.contentHorizontalAlignment = .left
+        
+        if #available(iOS 15.0, *) {
+            var config = UIButton.Configuration.filled()
+            config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0)
+            var container = AttributeContainer()
+            container.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            config.attributedTitle = AttributedString("Cadastrar", attributes: container)
+            config.baseBackgroundColor = UIColor.systemIndigo
+            view.configuration = config
+        } else {
+            view.setTitleColor(.white, for: .normal)
+            view.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+            view.backgroundColor = UIColor.systemIndigo
+            view.contentEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
+            view.setTitle("Cadastrar", for: .normal)
+        }
+        return view
+    }()
     
     public var signUp: ((SignUpViewModel) -> Void)?
     
@@ -96,7 +121,7 @@ extension SignUpViewController: ViewCode {
                                passwordTextField,
                                passwordConfirmationTextField,
                                saveButton,
-                               loadingIndicatorView,])
+                               loadingIndicatorView])
     }
     
     func setupConstraints() {
@@ -146,10 +171,18 @@ extension SignUpViewController: ViewCode {
             self.passwordConfirmationTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
         ])
         
+        // saveButton
+        NSLayoutConstraint.activate([
+            self.saveButton.topAnchor.constraint(equalTo: self.passwordConfirmationTextField.bottomAnchor, constant: 50),
+            self.saveButton.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
+            self.saveButton.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
+            self.saveButton.heightAnchor.constraint(equalToConstant: 60)
+        ])
+        
         // loadingIndicatorView
         NSLayoutConstraint.activate([
-            self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-            self.loadingIndicatorView.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.saveButton.centerYAnchor),
+            self.loadingIndicatorView.trailingAnchor.constraint(equalTo: self.saveButton.trailingAnchor, constant: -10)
         ])
     }
     

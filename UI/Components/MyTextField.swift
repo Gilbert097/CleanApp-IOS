@@ -12,7 +12,7 @@ public class MyTextField: UITextField {
     public init() {
         super.init(frame: .zero)
         self.translatesAutoresizingMaskIntoConstraints = false
-        self.font = UIFont.systemFont(ofSize: 14)
+        self.font = UIFont.systemFont(ofSize: 16)
         self.borderStyle = UITextField.BorderStyle.roundedRect
         self.autocorrectionType = UITextAutocorrectionType.no
         self.keyboardType = UIKeyboardType.default
