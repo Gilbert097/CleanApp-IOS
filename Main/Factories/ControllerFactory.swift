@@ -9,23 +9,21 @@ import Foundation
 import UI
 import Presentation
 import Validation
-import Data
-import Infra
+import Domain
 
-class SignUpFactory {
-    static func makeController() -> SignUpViewController {
+class ControllerFactory {
+    static func makeSignUp(addAccount: AddAccount) -> SignUpViewController {
         let controller = SignUpViewController()
         let emailValidatorAdapter = EmailValidatorAdapter()
-        let url = URL(string: "https://fordevs.herokuapp.com/api/signup")!
-        let alamofireAdapter = AlamofireAdapter()
-        let remoteAddAcctount = AddAccountRemote(url: url, httpPostClient: alamofireAdapter)
         
         let presenter = SignUpPresenter(
             alertView: controller,
             emailValidator: emailValidatorAdapter,
-            addAccount: remoteAddAcctount,
+            addAccount: addAccount,
             loadingView: controller)
         controller.signUp = presenter.signUp
         return controller
     }
 }
+
+
