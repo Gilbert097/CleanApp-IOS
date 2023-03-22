@@ -11,10 +11,14 @@ import Infra
 import Domain
 
 final class UseCaseFactory {
+    private static let httpPostClient = AlamofireAdapter()
+    private static let apiBaseUrl = "https://fordevs.herokuapp.com/api"
+    
+    private static func makeUrl(path: String) -> URL {
+        URL(string: "\(apiBaseUrl)/\(path)")!
+    }
     
     static func makeRemoteAddAccount() -> AddAccount {
-        let url = URL(string: "https://fordevs.herokuapp.com/api/signup")!
-        let alamofireAdapter = AlamofireAdapter()
-        return AddAccountRemote(url: url, httpPostClient: alamofireAdapter)
+       AddAccountRemote(url: makeUrl(path: "signup"), httpClient: httpPostClient)
     }
 }

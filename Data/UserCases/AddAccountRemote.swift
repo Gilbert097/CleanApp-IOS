@@ -10,18 +10,18 @@ import Domain
 
 public final class AddAccountRemote: AddAccount {
     private let url: URL
-    private let httpPostClient: HttpPostClient
+    private let httpClient: HttpPostClient
     
-    public init(url: URL, httpPostClient: HttpPostClient) {
+    public init(url: URL, httpClient: HttpPostClient) {
         self.url = url
-        self.httpPostClient = httpPostClient
+        self.httpClient = httpClient
     }
     
     public func add(
         addAccountModel: AddAccountModel,
         completion: @escaping (Result<AccountModel, DomainError>) -> Void
     ) {
-        httpPostClient.post(to: url, with: addAccountModel.toData()) { [weak self] result in
+        httpClient.post(to: url, with: addAccountModel.toData()) { [weak self] result in
             guard self != nil else { return }
             switch(result){
             case .success(let data):
