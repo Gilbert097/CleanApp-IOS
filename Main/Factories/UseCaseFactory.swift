@@ -15,7 +15,7 @@ final class UseCaseFactory {
     private static let apiBaseUrl = "https://fordevs.herokuapp.com/api"
     
     private static func makeUrl(path: String) -> URL {
-        URL(string: "\(apiBaseUrl)/\(path)")!
+        URL(string: "\(Enviroment.variable(.apiBaseUrl))/\(path)")!
     }
     
     static func makeRemoteAddAccount() -> AddAccount {
