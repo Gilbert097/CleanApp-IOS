@@ -8,7 +8,7 @@
 import XCTest
 import Main
 
-final class SingUpIntegrationTests: XCTestCase {
+final class SingUpComposerTests: XCTestCase {
     
     func test_UI_presentation_integration() throws {
         let sut =  SignUpComposer.composeViewControllerWith(addAccount: AddAccountSpy())
