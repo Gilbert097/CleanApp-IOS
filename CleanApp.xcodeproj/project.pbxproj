@@ -35,6 +35,7 @@
 		D43804DA29CA652C0062A70E /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D929CA652C0062A70E /* WeakVarProxy.swift */; };
 		D43804DF29CBA9980062A70E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804DE29CBA9980062A70E /* Enviroment.swift */; };
 		D43804E129CE4A500062A70E /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC8428D7F72B00C7E87E /* TestFactories.swift */; };
+		D43804E429CE50000062A70E /* MainQueueDispatchDecorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804E329CE50000062A70E /* MainQueueDispatchDecorator.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC6F28D15C0B00C7E87E /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */; };
@@ -317,6 +318,7 @@
 		D43804DC29CBA8420062A70E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D43804DD29CBA8AD0062A70E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		D43804DE29CBA9980062A70E /* Enviroment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Enviroment.swift; sourceTree = "<group>"; };
+		D43804E329CE50000062A70E /* MainQueueDispatchDecorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainQueueDispatchDecorator.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -488,6 +490,7 @@
 		D438047E29C108170062A70E /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				D43804E229CE4FF00062A70E /* Decorators */,
 				D43804DB29CBA8300062A70E /* Env */,
 				D43804D829CA65100062A70E /* Proxies */,
 				D43804D129CA55AB0062A70E /* Composers */,
@@ -557,6 +560,14 @@
 				D43804D429CA5ECA0062A70E /* SingUpComposerTests.swift */,
 			);
 			path = Composers;
+			sourceTree = "<group>";
+		};
+		D43804E229CE4FF00062A70E /* Decorators */ = {
+			isa = PBXGroup;
+			children = (
+				D43804E329CE50000062A70E /* MainQueueDispatchDecorator.swift */,
+			);
+			path = Decorators;
 			sourceTree = "<group>";
 		};
 		D476BC6528D1580D00C7E87E /* Presenters */ = {
@@ -1470,6 +1481,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D43804D029CA4C050062A70E /* UseCaseFactory.swift in Sources */,
+				D43804E429CE50000062A70E /* MainQueueDispatchDecorator.swift in Sources */,
 				D438048029C108170062A70E /* AppDelegate.swift in Sources */,
 				D43804DF29CBA9980062A70E /* Enviroment.swift in Sources */,
 				D438048229C108170062A70E /* SceneDelegate.swift in Sources */,
