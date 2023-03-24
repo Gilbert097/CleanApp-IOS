@@ -52,7 +52,7 @@ class AddAccountRemoteTests: XCTestCase {
     
     func test_add_should_not_complete_if_sut_has_been_deallocated() throws {
         let httpClientSpy = HttpClientSpy()
-        var sut: AddAccountRemote? = AddAccountRemote(url: makeUrl(), httpClient: httpClientSpy)
+        var sut: RemoteAddAccount? = RemoteAddAccount(url: makeUrl(), httpClient: httpClientSpy)
         var result: Result<AccountModel, DomainError>?
         sut?.add(addAccountModel: makeAddAccountModel()) { result = $0 }
         sut = nil
@@ -67,16 +67,16 @@ extension AddAccountRemoteTests {
         url: URL = URL(string: "http://any-url.com")!,
         file: StaticString = #filePath,
         line: UInt = #line
-    ) -> (sut: AddAccountRemote, httpClientSpy: HttpClientSpy) {
+    ) -> (sut: RemoteAddAccount, httpClientSpy: HttpClientSpy) {
         let httpClientSpy = HttpClientSpy()
-        let sut = AddAccountRemote(url: url, httpClient: httpClientSpy)
+        let sut = RemoteAddAccount(url: url, httpClient: httpClientSpy)
         checkMemoryLeak(for: sut, file: file, line: line)
         checkMemoryLeak(for: httpClientSpy, file: file, line: line)
         return (sut, httpClientSpy)
     }
     
     func expect(
-        _ sut: AddAccountRemote,
+        _ sut: RemoteAddAccount,
         completeWith expectedResult: Result<AccountModel, DomainError>,
         when action: () -> Void,
         file: StaticString = #filePath,

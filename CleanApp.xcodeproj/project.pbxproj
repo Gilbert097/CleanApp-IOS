@@ -34,6 +34,7 @@
 		D43804D729CA62080062A70E /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A901285814C60099B00D /* XCTestCase+Extension.swift */; };
 		D43804DA29CA652C0062A70E /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D929CA652C0062A70E /* WeakVarProxy.swift */; };
 		D43804DF29CBA9980062A70E /* Enviroment.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804DE29CBA9980062A70E /* Enviroment.swift */; };
+		D43804E129CE4A500062A70E /* TestFactories.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC8428D7F72B00C7E87E /* TestFactories.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC6F28D15C0B00C7E87E /* EmailValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */; };
@@ -67,7 +68,7 @@
 		D4A5A8E828554F780099B00D /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
 		D4A5A8E928554F780099B00D /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D4A5A8EE28555E620099B00D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8ED28555E620099B00D /* Model.swift */; };
-		D4A5A8F028555EF50099B00D /* AddAccountRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8EF28555EF50099B00D /* AddAccountRemote.swift */; };
+		D4A5A8F028555EF50099B00D /* RemoteAddAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8EF28555EF50099B00D /* RemoteAddAccount.swift */; };
 		D4A5A8F228555F290099B00D /* HttpPostClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8F128555F290099B00D /* HttpPostClient.swift */; };
 		D4A5A8FA2856B1200099B00D /* DomainError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8F92856B1200099B00D /* DomainError.swift */; };
 		D4A5A8FF2856BC7D0099B00D /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A8FE2856BC7D0099B00D /* Data+Extension.swift */; };
@@ -347,7 +348,7 @@
 		D4A5A8D928554F570099B00D /* DataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D4A5A8DE28554F570099B00D /* AddAccountRemoteTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountRemoteTests.swift; sourceTree = "<group>"; };
 		D4A5A8ED28555E620099B00D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		D4A5A8EF28555EF50099B00D /* AddAccountRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddAccountRemote.swift; sourceTree = "<group>"; };
+		D4A5A8EF28555EF50099B00D /* RemoteAddAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccount.swift; sourceTree = "<group>"; };
 		D4A5A8F128555F290099B00D /* HttpPostClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpPostClient.swift; sourceTree = "<group>"; };
 		D4A5A8F92856B1200099B00D /* DomainError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainError.swift; sourceTree = "<group>"; };
 		D4A5A8FB2856B3590099B00D /* HttpError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpError.swift; sourceTree = "<group>"; };
@@ -856,7 +857,7 @@
 		D4A5A8F528555FAA0099B00D /* UserCases */ = {
 			isa = PBXGroup;
 			children = (
-				D4A5A8EF28555EF50099B00D /* AddAccountRemote.swift */,
+				D4A5A8EF28555EF50099B00D /* RemoteAddAccount.swift */,
 			);
 			path = UserCases;
 			sourceTree = "<group>";
@@ -1483,6 +1484,7 @@
 			files = (
 				D43804D729CA62080062A70E /* XCTestCase+Extension.swift in Sources */,
 				D43804D629CA61BA0062A70E /* AddAccountSpy.swift in Sources */,
+				D43804E129CE4A500062A70E /* TestFactories.swift in Sources */,
 				D43804D529CA5ECA0062A70E /* SingUpComposerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1560,7 +1562,7 @@
 				D4A5A906285961DF0099B00D /* HttpError.swift in Sources */,
 				D4A5A8F228555F290099B00D /* HttpPostClient.swift in Sources */,
 				D4A5A8FF2856BC7D0099B00D /* Data+Extension.swift in Sources */,
-				D4A5A8F028555EF50099B00D /* AddAccountRemote.swift in Sources */,
+				D4A5A8F028555EF50099B00D /* RemoteAddAccount.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
