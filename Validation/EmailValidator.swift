@@ -1,6 +1,6 @@
 //
 //  EmailValidator.swift
-//  Presentation
+//  Validation
 //
 //  Created by Gilberto Silva on 13/09/22.
 //
