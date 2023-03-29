@@ -1,12 +1,12 @@
 //
 //  EmailValidatorSpy.swift
-//  PresentationTests
+//  ValidationTests
 //
 //  Created by Gilberto Silva on 18/09/22.
 //
 
 import Foundation
-import Presentation
+import Validation
 
 class EmailValidatorSpy: EmailValidator {
     var isvalid = true
