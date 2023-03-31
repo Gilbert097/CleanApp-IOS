@@ -53,6 +53,7 @@
 		D438050829D6180A0062A70E /* ValidationCompositeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438050729D6180A0062A70E /* ValidationCompositeTests.swift */; };
 		D438050A29D61CAF0062A70E /* ValidationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438050929D61CAF0062A70E /* ValidationComposite.swift */; };
 		D438050C29D61CD10062A70E /* ValidationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438050B29D61CD10062A70E /* ValidationSpy.swift */; };
+		D438050E29D71ADE0062A70E /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC7C28D7F67A00C7E87E /* EmailValidatorSpy.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -1590,6 +1591,7 @@
 			files = (
 				D43804D729CA62080062A70E /* XCTestCase+Extension.swift in Sources */,
 				D43804D629CA61BA0062A70E /* AddAccountSpy.swift in Sources */,
+				D438050E29D71ADE0062A70E /* EmailValidatorSpy.swift in Sources */,
 				D43804E129CE4A500062A70E /* TestFactories.swift in Sources */,
 				D43804D529CA5ECA0062A70E /* SingUpComposerTests.swift in Sources */,
 			);

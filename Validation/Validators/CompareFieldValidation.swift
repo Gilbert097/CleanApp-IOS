@@ -8,7 +8,7 @@
 import Foundation
 import Presentation
 
-public class CompareFieldValidation: Validation {
+public class CompareFieldValidation: Validation, Equatable {
     
     private let fieldName: String
     private let fieldNameToCompare: String
@@ -30,5 +30,9 @@ public class CompareFieldValidation: Validation {
         }
         return nil
        
+    }
+    
+    public static func == (lhs: CompareFieldValidation, rhs: CompareFieldValidation) -> Bool {
+        lhs.fieldName == rhs.fieldName && lhs.fieldNameToCompare == rhs.fieldNameToCompare && lhs.fieldLabel == rhs.fieldLabel
     }
 }
