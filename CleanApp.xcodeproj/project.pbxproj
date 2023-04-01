@@ -26,9 +26,9 @@
 		D43804C929C1127A0062A70E /* Domain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; };
 		D43804CA29C1127A0062A70E /* Domain.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D4A5A8C22852DC460099B00D /* Domain.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D43804CE29C13B240062A70E /* MyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804CD29C13B240062A70E /* MyTextField.swift */; };
-		D43804D029CA4C050062A70E /* UseCaseFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804CF29CA4C050062A70E /* UseCaseFactory.swift */; };
-		D43804D329CA55D20062A70E /* SignUpComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D229CA55D20062A70E /* SignUpComposer.swift */; };
-		D43804D529CA5ECA0062A70E /* SingUpComposerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D429CA5ECA0062A70E /* SingUpComposerTests.swift */; };
+		D43804D029CA4C050062A70E /* RemoteAddAccountFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804CF29CA4C050062A70E /* RemoteAddAccountFactory.swift */; };
+		D43804D329CA55D20062A70E /* SignUpControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D229CA55D20062A70E /* SignUpControllerFactory.swift */; };
+		D43804D529CA5ECA0062A70E /* SingUpControllerFactoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D429CA5ECA0062A70E /* SingUpControllerFactoryTests.swift */; };
 		D43804D629CA61BA0062A70E /* AddAccountSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC7F28D7F6A900C7E87E /* AddAccountSpy.swift */; };
 		D43804D729CA62080062A70E /* XCTestCase+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A901285814C60099B00D /* XCTestCase+Extension.swift */; };
 		D43804DA29CA652C0062A70E /* WeakVarProxy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D43804D929CA652C0062A70E /* WeakVarProxy.swift */; };
@@ -54,6 +54,9 @@
 		D438050A29D61CAF0062A70E /* ValidationComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438050929D61CAF0062A70E /* ValidationComposite.swift */; };
 		D438050C29D61CD10062A70E /* ValidationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438050B29D61CD10062A70E /* ValidationSpy.swift */; };
 		D438050E29D71ADE0062A70E /* EmailValidatorSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC7C28D7F67A00C7E87E /* EmailValidatorSpy.swift */; };
+		D438051029D8B1D80062A70E /* ApiUrlFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438050F29D8B1D80062A70E /* ApiUrlFactory.swift */; };
+		D438051329D8B2510062A70E /* AlamofireAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438051229D8B2510062A70E /* AlamofireAdapterFactory.swift */; };
+		D438051729D8B3630062A70E /* EmailValidatorAdapterFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438051629D8B3630062A70E /* EmailValidatorAdapterFactory.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -334,9 +337,9 @@
 		D438048D29C108190062A70E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D438049229C108190062A70E /* MainTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MainTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D43804CD29C13B240062A70E /* MyTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTextField.swift; sourceTree = "<group>"; };
-		D43804CF29CA4C050062A70E /* UseCaseFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCaseFactory.swift; sourceTree = "<group>"; };
-		D43804D229CA55D20062A70E /* SignUpComposer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpComposer.swift; sourceTree = "<group>"; };
-		D43804D429CA5ECA0062A70E /* SingUpComposerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpComposerTests.swift; sourceTree = "<group>"; };
+		D43804CF29CA4C050062A70E /* RemoteAddAccountFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteAddAccountFactory.swift; sourceTree = "<group>"; };
+		D43804D229CA55D20062A70E /* SignUpControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpControllerFactory.swift; sourceTree = "<group>"; };
+		D43804D429CA5ECA0062A70E /* SingUpControllerFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SingUpControllerFactoryTests.swift; sourceTree = "<group>"; };
 		D43804D929CA652C0062A70E /* WeakVarProxy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeakVarProxy.swift; sourceTree = "<group>"; };
 		D43804DC29CBA8420062A70E /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D43804DD29CBA8AD0062A70E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
@@ -353,6 +356,9 @@
 		D438050729D6180A0062A70E /* ValidationCompositeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationCompositeTests.swift; sourceTree = "<group>"; };
 		D438050929D61CAF0062A70E /* ValidationComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationComposite.swift; sourceTree = "<group>"; };
 		D438050B29D61CD10062A70E /* ValidationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationSpy.swift; sourceTree = "<group>"; };
+		D438050F29D8B1D80062A70E /* ApiUrlFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiUrlFactory.swift; sourceTree = "<group>"; };
+		D438051229D8B2510062A70E /* AlamofireAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlamofireAdapterFactory.swift; sourceTree = "<group>"; };
+		D438051629D8B3630062A70E /* EmailValidatorAdapterFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailValidatorAdapterFactory.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -528,7 +534,6 @@
 				D43804E229CE4FF00062A70E /* Decorators */,
 				D43804DB29CBA8300062A70E /* Env */,
 				D43804D829CA65100062A70E /* Proxies */,
-				D43804D129CA55AB0062A70E /* Composers */,
 				D43804C629C10B690062A70E /* Factories */,
 				D438047F29C108170062A70E /* AppDelegate.swift */,
 				D438048129C108170062A70E /* SceneDelegate.swift */,
@@ -550,7 +555,9 @@
 		D43804C629C10B690062A70E /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				D43804CF29CA4C050062A70E /* UseCaseFactory.swift */,
+				D438051429D8B25E0062A70E /* Infra */,
+				D438051529D8B2690062A70E /* Controllers */,
+				D438051129D8B2040062A70E /* Http */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -561,14 +568,6 @@
 				D43804CD29C13B240062A70E /* MyTextField.swift */,
 			);
 			path = Components;
-			sourceTree = "<group>";
-		};
-		D43804D129CA55AB0062A70E /* Composers */ = {
-			isa = PBXGroup;
-			children = (
-				D43804D229CA55D20062A70E /* SignUpComposer.swift */,
-			);
-			path = Composers;
 			sourceTree = "<group>";
 		};
 		D43804D829CA65100062A70E /* Proxies */ = {
@@ -592,7 +591,7 @@
 		D43804E029CE47410062A70E /* Composers */ = {
 			isa = PBXGroup;
 			children = (
-				D43804D429CA5ECA0062A70E /* SingUpComposerTests.swift */,
+				D43804D429CA5ECA0062A70E /* SingUpControllerFactoryTests.swift */,
 			);
 			path = Composers;
 			sourceTree = "<group>";
@@ -666,6 +665,32 @@
 				D438050729D6180A0062A70E /* ValidationCompositeTests.swift */,
 			);
 			path = Validators;
+			sourceTree = "<group>";
+		};
+		D438051129D8B2040062A70E /* Http */ = {
+			isa = PBXGroup;
+			children = (
+				D438050F29D8B1D80062A70E /* ApiUrlFactory.swift */,
+				D43804CF29CA4C050062A70E /* RemoteAddAccountFactory.swift */,
+			);
+			path = Http;
+			sourceTree = "<group>";
+		};
+		D438051429D8B25E0062A70E /* Infra */ = {
+			isa = PBXGroup;
+			children = (
+				D438051229D8B2510062A70E /* AlamofireAdapterFactory.swift */,
+				D438051629D8B3630062A70E /* EmailValidatorAdapterFactory.swift */,
+			);
+			path = Infra;
+			sourceTree = "<group>";
+		};
+		D438051529D8B2690062A70E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D43804D229CA55D20062A70E /* SignUpControllerFactory.swift */,
+			);
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		D476BC6528D1580D00C7E87E /* Presenters */ = {
@@ -1575,13 +1600,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D43804D029CA4C050062A70E /* UseCaseFactory.swift in Sources */,
+				D438051329D8B2510062A70E /* AlamofireAdapterFactory.swift in Sources */,
+				D43804D029CA4C050062A70E /* RemoteAddAccountFactory.swift in Sources */,
 				D43804E429CE50000062A70E /* MainQueueDispatchDecorator.swift in Sources */,
 				D438048029C108170062A70E /* AppDelegate.swift in Sources */,
+				D438051029D8B1D80062A70E /* ApiUrlFactory.swift in Sources */,
 				D43804DF29CBA9980062A70E /* Enviroment.swift in Sources */,
 				D438048229C108170062A70E /* SceneDelegate.swift in Sources */,
 				D43804DA29CA652C0062A70E /* WeakVarProxy.swift in Sources */,
-				D43804D329CA55D20062A70E /* SignUpComposer.swift in Sources */,
+				D438051729D8B3630062A70E /* EmailValidatorAdapterFactory.swift in Sources */,
+				D43804D329CA55D20062A70E /* SignUpControllerFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1593,7 +1621,7 @@
 				D43804D629CA61BA0062A70E /* AddAccountSpy.swift in Sources */,
 				D438050E29D71ADE0062A70E /* EmailValidatorSpy.swift in Sources */,
 				D43804E129CE4A500062A70E /* TestFactories.swift in Sources */,
-				D43804D529CA5ECA0062A70E /* SingUpComposerTests.swift in Sources */,
+				D43804D529CA5ECA0062A70E /* SingUpControllerFactoryTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
