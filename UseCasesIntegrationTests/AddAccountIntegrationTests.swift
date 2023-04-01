@@ -11,7 +11,7 @@ import Data
 import Domain
 
 class AddAccountIntegrationTests: XCTestCase {
-
+    
     func test_add_account() throws {
         let alamofireAdapter = AlamofireAdapter()
         let url = URL(string: "http://localhost:5050/api/signup")!
@@ -28,6 +28,18 @@ class AddAccountIntegrationTests: XCTestCase {
             }
             exp.fulfill()
         }
-        wait(for: [exp], timeout: 15)
+        wait(for: [exp], timeout: 5)
+        
+        let exp2 = expectation(description: "Waiting")
+        sut.add(addAccountModel: addAccountModel) { result in
+            switch result {
+            case .failure(let error) where error == .emailInUse:
+                XCTAssertNotNil(error)
+            default:
+                XCTFail("Expect failure got \(result) instead.")
+            }
+            exp2.fulfill()
+        }
+        wait(for: [exp2], timeout: 5)
     }
 }
