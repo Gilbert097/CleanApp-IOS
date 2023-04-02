@@ -69,6 +69,20 @@ class LoginPresenterTests: XCTestCase {
         authenticationSpy.completeWithError(.expiredSession)
         wait(for: [exp], timeout: 0.1)
     }
+    
+    func test_login_should_show_success_message_if_authentication_succeeds() throws {
+        let alertViewSpy = AlertViewSpy()
+        let authenticationSpy = AuthenticationSpy()
+        let sut = makeSut(alertViewSpy: alertViewSpy, authenticationSpy: authenticationSpy)
+        let exp = expectation(description: "waiting")
+        alertViewSpy.observe { viewModel in
+            exp.fulfill()
+            XCTAssertEqual(viewModel, AlertViewModel(title: "Sucesso", message: "Login feito com successo."))
+        }
+        sut.login(viewModel: makeLoginViewModel())
+        authenticationSpy.completeWithAccount(makeAccountModel())
+        wait(for: [exp], timeout: 0.1)
+    }
 }
 
 extension LoginPresenterTests {

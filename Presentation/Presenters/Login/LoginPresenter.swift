@@ -31,8 +31,8 @@ public final class LoginPresenter {
                 
                 //self.loadingView.display(viewModel: .init(isLoading: false))
                 switch result {
-                case .success: break
-                    //self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Conta criada com successo."))
+                case .success:
+                    self.alertView.showMessage(viewModel: AlertViewModel(title: "Sucesso", message: "Login feito com successo."))
                 case .failure(let error):
                     var errorMessage: String!
                     switch error {
