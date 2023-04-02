@@ -70,6 +70,7 @@
 		D438053229DA18C50062A70E /* LoginPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053129DA18C50062A70E /* LoginPresenterTests.swift */; };
 		D438053529DA19440062A70E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053429DA19440062A70E /* LoginViewModel.swift */; };
 		D438053729DA19C40062A70E /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053629DA19C40062A70E /* LoginPresenter.swift */; };
+		D438053929DA1C610062A70E /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053829DA1C610062A70E /* AuthenticationSpy.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -385,6 +386,7 @@
 		D438053129DA18C50062A70E /* LoginPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenterTests.swift; sourceTree = "<group>"; };
 		D438053429DA19440062A70E /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D438053629DA19C40062A70E /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		D438053829DA1C610062A70E /* AuthenticationSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -824,6 +826,7 @@
 			isa = PBXGroup;
 			children = (
 				D476BC7F28D7F6A900C7E87E /* AddAccountSpy.swift */,
+				D438053829DA1C610062A70E /* AuthenticationSpy.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1757,6 +1760,7 @@
 				D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */,
 				D43804ED29D3AD1C0062A70E /* ValidationSpy.swift in Sources */,
 				D476BC8528D7F72B00C7E87E /* TestFactories.swift in Sources */,
+				D438053929DA1C610062A70E /* AuthenticationSpy.swift in Sources */,
 				D498810028D00D0B004F21D5 /* SignUpPresenterTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
