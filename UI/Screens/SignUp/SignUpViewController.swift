@@ -11,81 +11,65 @@ import Presentation
 
 public final class SignUpViewController: UIViewController {
     
-    public let loadingIndicatorView: UIActivityIndicatorView = {
+    private let loadingIndicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
         view.translatesAutoresizingMaskIntoConstraints = false
         view.hidesWhenStopped = true
+        view.color = Color.primary
         return view
     }()
     
-    public let iconLabel: UILabel = {
+    private let header: UIView = {
+        let view = UIView()
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.backgroundColor = Color.primary
+        return view
+    }()
+    
+    private let imageView: UIImageView = {
+        let view = UIImageView(image: .image(named: "logo"))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.contentMode = .scaleAspectFit
+        return view
+    }()
+    
+    private let titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .systemFont(ofSize: 90)
-        view.text = "📱"
+        view.text = "CADASTRO"
+        view.textColor = Color.primary
+        view.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return view
     }()
     
-    public let titleLabel: UILabel = {
-        let view = UILabel()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.font = .systemFont(ofSize: 30, weight: .bold)
-        view.text = "FavLang"
-        view.textColor = UIColor.systemIndigo
-        return view
-    }()
-    
-    public let nameTextField: MyTextField = {
-        let view = MyTextField()
+    private let nameTextField: HighlightedTextField = {
+        let view = HighlightedTextField()
         view.placeholder = "Nome"
         return view
     }()
     
-    public let emailTextField: MyTextField = {
-        let view = MyTextField()
+    private let emailTextField: HighlightedTextField = {
+        let view = HighlightedTextField()
         view.placeholder = "Email"
         view.keyboardType = .emailAddress
         return view
     }()
     
-    public let passwordTextField: MyTextField = {
-        let view = MyTextField()
+    private let passwordTextField: HighlightedTextField = {
+        let view = HighlightedTextField()
         view.placeholder = "Senha"
         view.isSecureTextEntry = true
         return view
     }()
     
-    public let passwordConfirmationTextField: MyTextField = {
-        let view = MyTextField()
+    private let passwordConfirmationTextField: HighlightedTextField = {
+        let view = HighlightedTextField()
         view.placeholder = "Confirmar senha"
         view.isSecureTextEntry = true
         return view
     }()
     
-    public let saveButton: UIButton = {
-        let view = UIButton()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.clipsToBounds = true
-        view.layer.cornerRadius = 5
-        view.contentHorizontalAlignment = .left
-        
-        if #available(iOS 15.0, *) {
-            var config = UIButton.Configuration.filled()
-            config.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 15, bottom: 0, trailing: 0)
-            var container = AttributeContainer()
-            container.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-            config.attributedTitle = AttributedString("Cadastrar", attributes: container)
-            config.baseBackgroundColor = UIColor.systemIndigo
-            view.configuration = config
-        } else {
-            view.setTitleColor(.white, for: .normal)
-            view.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-            view.backgroundColor = UIColor.systemIndigo
-            view.contentEdgeInsets = UIEdgeInsets(top: 0, left: 15, bottom: 0, right: 0)
-            view.setTitle("Cadastrar", for: .normal)
-        }
-        return view
-    }()
+    private let saveButton = PrimaryButton(title: "CRIAR CONTA")
     
     public var signUp: ((SignUpViewModel) -> Void)?
     
@@ -100,6 +84,7 @@ public final class SignUpViewController: UIViewController {
     }
     
     private func configure() {
+        self.title = "4Dev"
         self.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
@@ -118,42 +103,54 @@ public final class SignUpViewController: UIViewController {
 extension SignUpViewController: ViewCode {
     
     func setupViewHierarchy() {
-        self.view.addSubviews([iconLabel,
+        header.addSubview(imageView)
+        self.view.addSubviews([header,
                                titleLabel,
                                nameTextField,
                                emailTextField,
                                passwordTextField,
                                passwordConfirmationTextField,
                                saveButton,
-                               loadingIndicatorView])
+                               loadingIndicatorView
+                              ])
     }
     
     func setupConstraints() {
         let safeArea = self.view.safeAreaLayoutGuide
         
-        // iconLabel
+        //        // header
         NSLayoutConstraint.activate([
-            self.iconLabel.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 20),
-            self.iconLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            self.header.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
+            self.header.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0),
+            self.header.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: 0)
+        ])
+        
+        // imageView
+        NSLayoutConstraint.activate([
+            self.imageView.centerXAnchor.constraint(equalTo: self.header.centerXAnchor),
+            self.imageView.topAnchor.constraint(equalTo: self.header.topAnchor, constant: 56),
+            self.imageView.bottomAnchor.constraint(equalTo: self.header.bottomAnchor, constant: -56),
+            self.imageView.heightAnchor.constraint(equalToConstant: 90),
+            self.imageView.widthAnchor.constraint(equalToConstant: 120)
         ])
         
         // titleLabel
         NSLayoutConstraint.activate([
-            self.titleLabel.topAnchor.constraint(equalTo: iconLabel.bottomAnchor, constant: 10),
-            self.titleLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor)
+            self.titleLabel.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            self.titleLabel.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 24)
         ])
         
         // nameTextField
         NSLayoutConstraint.activate([
-            self.nameTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 50),
-            self.nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 20),
-            self.nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -20),
-            self.nameTextField.heightAnchor.constraint(equalToConstant: 50)
+            self.nameTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
+            self.nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32),
+            self.nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32),
+            self.nameTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         // emailTextField
         NSLayoutConstraint.activate([
-            self.emailTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 10),
+            self.emailTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 16),
             self.emailTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
             self.emailTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
             self.emailTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
@@ -161,7 +158,7 @@ extension SignUpViewController: ViewCode {
         
         // passwordTextField
         NSLayoutConstraint.activate([
-            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 10),
+            self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 16),
             self.passwordTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
             self.passwordTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
             self.passwordTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
@@ -169,7 +166,7 @@ extension SignUpViewController: ViewCode {
         
         // passwordConfirmationTextField
         NSLayoutConstraint.activate([
-            self.passwordConfirmationTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 10),
+            self.passwordConfirmationTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 16),
             self.passwordConfirmationTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
             self.passwordConfirmationTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
             self.passwordConfirmationTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
@@ -177,7 +174,7 @@ extension SignUpViewController: ViewCode {
         
         // saveButton
         NSLayoutConstraint.activate([
-            self.saveButton.topAnchor.constraint(equalTo: self.passwordConfirmationTextField.bottomAnchor, constant: 50),
+            self.saveButton.topAnchor.constraint(equalTo: self.passwordConfirmationTextField.bottomAnchor, constant: 32),
             self.saveButton.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
             self.saveButton.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
             self.saveButton.heightAnchor.constraint(equalToConstant: 60)
@@ -185,13 +182,13 @@ extension SignUpViewController: ViewCode {
         
         // loadingIndicatorView
         NSLayoutConstraint.activate([
-            self.loadingIndicatorView.centerYAnchor.constraint(equalTo: self.saveButton.centerYAnchor),
-            self.loadingIndicatorView.trailingAnchor.constraint(equalTo: self.saveButton.trailingAnchor, constant: -10)
+            self.loadingIndicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
+            self.loadingIndicatorView.topAnchor.constraint(equalTo: self.saveButton.bottomAnchor, constant: 16)
         ])
     }
     
     func setupAdditionalConfiguration() {
-        self.view.backgroundColor = .black
+        self.view.backgroundColor = .white
     }
 }
 
