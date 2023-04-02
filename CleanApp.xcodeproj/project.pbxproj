@@ -64,6 +64,7 @@
 		D438052529D8F6470062A70E /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438052429D8F6470062A70E /* Color.swift */; };
 		D438052729D8F7740062A70E /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438052629D8F7740062A70E /* PrimaryButton.swift */; };
 		D438052929D8F8900062A70E /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438052829D8F8900062A70E /* NavigationController.swift */; };
+		D438052B29DA01AA0062A70E /* Authentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438052A29DA01AA0062A70E /* Authentication.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -373,6 +374,7 @@
 		D438052429D8F6470062A70E /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		D438052629D8F7740062A70E /* PrimaryButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		D438052829D8F8900062A70E /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		D438052A29DA01AA0062A70E /* Authentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Authentication.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -1004,6 +1006,7 @@
 			isa = PBXGroup;
 			children = (
 				D4A5A8C928554D9F0099B00D /* AddAccount.swift */,
+				D438052A29DA01AA0062A70E /* Authentication.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -1731,6 +1734,7 @@
 				D4A5A8EE28555E620099B00D /* Model.swift in Sources */,
 				D4A5A8CA28554D9F0099B00D /* AddAccount.swift in Sources */,
 				D4A5A8FA2856B1200099B00D /* DomainError.swift in Sources */,
+				D438052B29DA01AA0062A70E /* Authentication.swift in Sources */,
 				D4A5A8CC28554ECD0099B00D /* AccountModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
