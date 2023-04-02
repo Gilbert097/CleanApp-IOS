@@ -10,6 +10,14 @@ import Presentation
 import Domain
 
 class SignUpPresenterTests: XCTestCase {
+    
+    func test_signUp_should_call_add_account_with_correct_values() {
+        let addAccountSpy = AddAccountSpy()
+        let sut = makeSut(addAccountSpy: addAccountSpy)
+        let viewModel = makeSignUpViewModel()
+        sut.signUp(viewModel: viewModel)
+        XCTAssertEqual(addAccountSpy.addAccountModel, makeAddAccountModel())
+    }
 
     func test_signUp_should_show_generic_error_message_if_addAccount_fails() throws {
         let alertViewSpy = AlertViewSpy()
