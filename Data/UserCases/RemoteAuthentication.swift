@@ -22,8 +22,13 @@ public final class RemoteAuthentication {
             guard self != nil else { return }
             switch(result){
             case .success: break
-            case .failure:
-                completion(.failure(.unexpected))
+            case .failure(let error):
+                switch error {
+                case .unauthorized:
+                    completion(.failure(.expiredSession))
+                default:
+                    completion(.failure(.unexpected))
+                }
             }
         }
     }
