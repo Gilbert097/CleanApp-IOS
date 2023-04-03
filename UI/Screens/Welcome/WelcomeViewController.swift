@@ -62,6 +62,7 @@ public final class WelcomeViewController: UIViewController {
     }()
     
     public var login: (() -> Void)?
+    public var signUp: (() -> Void)?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,10 +76,15 @@ public final class WelcomeViewController: UIViewController {
     
     private func configure() {
         self.loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
+        self.signUpButton.addTarget(self, action: #selector(signUpButtonTapped), for: .touchUpInside)
     }
     
     @objc private func loginButtonTapped() {
         self.login?()
+    }
+    
+    @objc private func signUpButtonTapped() {
+        self.signUp?()
     }
 }
 

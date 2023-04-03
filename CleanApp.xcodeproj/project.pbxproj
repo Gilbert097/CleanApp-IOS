@@ -78,6 +78,7 @@
 		D438054429DB1AFF0062A70E /* LoginControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054329DB1AFF0062A70E /* LoginControllerFactory.swift */; };
 		D438054629DB1CB10062A70E /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054529DB1CB10062A70E /* RemoteAuthentication.swift */; };
 		D438054929DB3D690062A70E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054829DB3D690062A70E /* WelcomeViewController.swift */; };
+		D438054C29DB48B60062A70E /* WelcomeViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054B29DB48B60062A70E /* WelcomeViewControllerTests.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -400,6 +401,7 @@
 		D438054329DB1AFF0062A70E /* LoginControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerFactory.swift; sourceTree = "<group>"; };
 		D438054529DB1CB10062A70E /* RemoteAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
 		D438054829DB3D690062A70E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		D438054B29DB48B60062A70E /* WelcomeViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewControllerTests.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -788,6 +790,7 @@
 			isa = PBXGroup;
 			children = (
 				D438053E29DA54100062A70E /* LoginControllerTests.swift */,
+				D438054B29DB48B60062A70E /* WelcomeViewControllerTests.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -796,6 +799,13 @@
 			isa = PBXGroup;
 			children = (
 				D438054829DB3D690062A70E /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		D438054A29DB48AB0062A70E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
 			);
 			path = Welcome;
 			sourceTree = "<group>";
@@ -929,6 +939,7 @@
 		D47DEC9129245953005E654C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D438054A29DB48AB0062A70E /* Welcome */,
 				D438053D29DA54040062A70E /* Login */,
 				D47DEC8F29245920005E654C /* SignUp */,
 			);
@@ -1772,6 +1783,7 @@
 			files = (
 				D476BC9828D94F1800C7E87E /* SignUpViewControllerTests.swift in Sources */,
 				D47DEC9429245A77005E654C /* TestExtension.swift in Sources */,
+				D438054C29DB48B60062A70E /* WelcomeViewControllerTests.swift in Sources */,
 				D438053F29DA54100062A70E /* LoginControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
