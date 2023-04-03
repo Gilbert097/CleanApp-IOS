@@ -71,7 +71,7 @@ public final class SignUpViewController: UIViewController {
     
     public let saveButton = PrimaryButton(title: "CRIAR CONTA")
     
-    public var signUp: ((SignUpViewModel) -> Void)?
+    public var signUp: ((SignUpRequest) -> Void)?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -89,7 +89,7 @@ public final class SignUpViewController: UIViewController {
     }
     
     @objc private func saveButtonTapped() {
-        let viewModel = SignUpViewModel(
+        let viewModel = SignUpRequest(
             name: nameTextField.text,
             email: emailTextField.text,
             password: passwordTextField.text,

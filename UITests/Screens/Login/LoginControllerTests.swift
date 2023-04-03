@@ -28,11 +28,11 @@ class LoginControllerTests: XCTestCase {
     }
     
     func test_loginButton_calls_login_on_tap() {
-        var viewModel: LoginViewModel?
+        var viewModel: LoginRequest?
         let sut = makeSut(loginSpy: { viewModel = $0 })
         sut.loginButton.simulateTap()
       
-        let viewModelSpy = LoginViewModel(
+        let viewModelSpy = LoginRequest(
             email: sut.emailTextField.text,
             password: sut.passwordTextField.text
         )
@@ -42,7 +42,7 @@ class LoginControllerTests: XCTestCase {
 
 extension LoginControllerTests {
     
-    private func makeSut(loginSpy: ((LoginViewModel) -> Void)? = nil) -> LoginViewController{
+    private func makeSut(loginSpy: ((LoginRequest) -> Void)? = nil) -> LoginViewController{
         let sut = LoginViewController()
         sut.login = loginSpy
         sut.loadViewIfNeeded()

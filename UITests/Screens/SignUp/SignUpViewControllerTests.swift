@@ -28,11 +28,11 @@ class SignUpViewControllerTests: XCTestCase {
     }
     
     func test_saveButton_calls_sigup_on_tap() {
-        var viewModel: SignUpViewModel?
+        var viewModel: SignUpRequest?
         let sut = makeSut(signUp: { viewModel = $0 })
         sut.saveButton.simulateTap()
       
-        let viewModelSpy = SignUpViewModel(
+        let viewModelSpy = SignUpRequest(
             name: sut.nameTextField.text,
             email: sut.emailTextField.text,
             password: sut.passwordTextField.text,
@@ -44,7 +44,7 @@ class SignUpViewControllerTests: XCTestCase {
 
 extension SignUpViewControllerTests {
     
-    private func makeSut(signUp: ((SignUpViewModel) -> Void)? = nil) -> SignUpViewController{
+    private func makeSut(signUp: ((SignUpRequest) -> Void)? = nil) -> SignUpViewController{
         let sut = SignUpViewController()
         sut.signUp = signUp
         sut.loadViewIfNeeded()

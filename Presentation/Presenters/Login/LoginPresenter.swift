@@ -25,7 +25,7 @@ public final class LoginPresenter {
         self.validation = validation
     }
     
-    public func login(viewModel: LoginViewModel){
+    public func login(viewModel: LoginRequest){
         if let message = self.validation.validate(data: viewModel.toJson()) {
             self.alertView.showMessage(viewModel: AlertViewModel(title: "Falha na validação", message: message))
         } else {

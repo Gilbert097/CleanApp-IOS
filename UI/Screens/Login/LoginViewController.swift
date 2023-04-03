@@ -59,7 +59,7 @@ public final class LoginViewController: UIViewController {
     
     public let loginButton = PrimaryButton(title: "ENTRAR")
     
-    public var login: ((LoginViewModel) -> Void)?
+    public var login: ((LoginRequest) -> Void)?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -77,7 +77,7 @@ public final class LoginViewController: UIViewController {
     }
     
     @objc private func saveButtonTapped() {
-        let viewModel = LoginViewModel(
+        let viewModel = LoginRequest(
             email: emailTextField.text,
             password: passwordTextField.text
         )
