@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 public final class NavigationController: UINavigationController {
+    private var currentViewController: UIViewController?
     
     override public init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -41,9 +42,17 @@ public final class NavigationController: UINavigationController {
     
     public func setRootViewController(_ viewController: UIViewController) {
         setViewControllers([viewController], animated: true)
+        currentViewController = viewController
+        hideBackButtonText()
+    }
+    
+    public func hideBackButtonText() {
+        currentViewController?.navigationItem.backBarButtonItem = UIBarButtonItem(title: nil, style: .plain, target: nil, action: nil)
     }
     
     public func pushViewController(_ viewController: UIViewController) {
         pushViewController(viewController, animated: true)
+        currentViewController = viewController
+        hideBackButtonText()
     }
 }
