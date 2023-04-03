@@ -77,6 +77,7 @@
 		D438054229DB1A7B0062A70E /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053829DA1C610062A70E /* AuthenticationSpy.swift */; };
 		D438054429DB1AFF0062A70E /* LoginControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054329DB1AFF0062A70E /* LoginControllerFactory.swift */; };
 		D438054629DB1CB10062A70E /* RemoteAuthentication.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054529DB1CB10062A70E /* RemoteAuthentication.swift */; };
+		D438054929DB3D690062A70E /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438054829DB3D690062A70E /* WelcomeViewController.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -398,6 +399,7 @@
 		D438054029DB1A490062A70E /* LoginControllerFactoryTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerFactoryTests.swift; sourceTree = "<group>"; };
 		D438054329DB1AFF0062A70E /* LoginControllerFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerFactory.swift; sourceTree = "<group>"; };
 		D438054529DB1CB10062A70E /* RemoteAuthentication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RemoteAuthentication.swift; sourceTree = "<group>"; };
+		D438054829DB3D690062A70E /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -777,6 +779,7 @@
 		D438053A29DA53040062A70E /* Login */ = {
 			isa = PBXGroup;
 			children = (
+				D438053B29DA530E0062A70E /* LoginViewController.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -787,6 +790,14 @@
 				D438053E29DA54100062A70E /* LoginControllerTests.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		D438054729DB3D520062A70E /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				D438054829DB3D690062A70E /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 		D476BC6528D1580D00C7E87E /* Presenters */ = {
@@ -893,7 +904,6 @@
 			isa = PBXGroup;
 			children = (
 				D476BCA628D952B300C7E87E /* SignUpViewController.swift */,
-				D438053B29DA530E0062A70E /* LoginViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -909,6 +919,7 @@
 		D47DEC902924594D005E654C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D438054729DB3D520062A70E /* Welcome */,
 				D438053A29DA53040062A70E /* Login */,
 				D47DEC8E2924591A005E654C /* SignUp */,
 			);
@@ -1749,6 +1760,7 @@
 				D438052529D8F6470062A70E /* Color.swift in Sources */,
 				D438052929D8F8900062A70E /* NavigationController.swift in Sources */,
 				D43804CE29C13B240062A70E /* HighlightedTextField.swift in Sources */,
+				D438054929DB3D690062A70E /* WelcomeViewController.swift in Sources */,
 				D438052329D8F5D90062A70E /* UIColor+.swift in Sources */,
 				D438053C29DA530E0062A70E /* LoginViewController.swift in Sources */,
 			);

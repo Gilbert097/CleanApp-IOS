@@ -14,23 +14,27 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
-        let viewController = makeLoginViewViewController() 
-        let navigationController = NavigationController(rootViewController: viewController)
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.makeKeyAndVisible()
         self.window?.windowScene = windowScene
-        self.window?.rootViewController = navigationController
+        self.window?.rootViewController = makeWelcomeViewController()
     }
     
-    private func makeSignUpViewController() -> SignUpViewController {
+    private func makeSignUpViewController() -> NavigationController {
         let httpClient = makeAlamofireAdapter()
         let addAccount = makeRemoteAddAccount(httpClient: httpClient)
-        return makeSignUpController(addAccount: addAccount)
+        let viewController = makeSignUpController(addAccount: addAccount)
+        return NavigationController(rootViewController: viewController)
     }
     
-    private func makeLoginViewViewController() -> LoginViewController {
+    private func makeLoginViewViewController() -> NavigationController {
         let httpClient = makeAlamofireAdapter()
         let authentication = makeRemoteAuthentication(httpClient: httpClient)
-        return makeLoginController(authentication: authentication)
+        let viewController = makeLoginController(authentication: authentication)
+        return NavigationController(rootViewController: viewController)
+    }
+    
+    private func makeWelcomeViewController() -> WelcomeViewController {
+        WelcomeViewController()
     }
 }
