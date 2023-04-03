@@ -1,15 +1,15 @@
 //
-//  SignUpViewController.swift
+//  LoginViewController.swift
 //  UI
 //
-//  Created by Gilberto Silva on 19/09/22.
+//  Created by Gilberto Silva on 02/04/23.
 //
 
 import Foundation
 import UIKit
 import Presentation
 
-public final class SignUpViewController: UIViewController {
+public final class LoginViewController: UIViewController {
     
     public let loadingIndicatorView: UIActivityIndicatorView = {
         let view = UIActivityIndicatorView(style: UIActivityIndicatorView.Style.large)
@@ -36,17 +36,12 @@ public final class SignUpViewController: UIViewController {
     private let titleLabel: UILabel = {
         let view = UILabel()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.text = "CADASTRO"
+        view.text = "LOGIN"
         view.textColor = Color.primary
         view.font = UIFont.systemFont(ofSize: 20, weight: .bold)
         return view
     }()
     
-    public let nameTextField: HighlightedTextField = {
-        let view = HighlightedTextField()
-        view.placeholder = "Nome"
-        return view
-    }()
     
     public let emailTextField: HighlightedTextField = {
         let view = HighlightedTextField()
@@ -62,16 +57,9 @@ public final class SignUpViewController: UIViewController {
         return view
     }()
     
-    public let passwordConfirmationTextField: HighlightedTextField = {
-        let view = HighlightedTextField()
-        view.placeholder = "Confirmar senha"
-        view.isSecureTextEntry = true
-        return view
-    }()
+    public let loginButton = PrimaryButton(title: "ENTRAR")
     
-    public let saveButton = PrimaryButton(title: "CRIAR CONTA")
-    
-    public var signUp: ((SignUpViewModel) -> Void)?
+    public var login: ((LoginViewModel) -> Void)?
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,32 +73,28 @@ public final class SignUpViewController: UIViewController {
     
     private func configure() {
         self.title = "4Dev"
-        self.saveButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
+        self.loginButton.addTarget(self, action: #selector(saveButtonTapped), for: .touchUpInside)
     }
     
     @objc private func saveButtonTapped() {
-        let viewModel = SignUpViewModel(
-            name: nameTextField.text,
+        let viewModel = LoginViewModel(
             email: emailTextField.text,
-            password: passwordTextField.text,
-            passwordConfirmation: passwordConfirmationTextField.text
+            password: passwordTextField.text
         )
-        self.signUp?(viewModel)
+        self.login?(viewModel)
     }
 }
 
 // MARK: - ViewCode
-extension SignUpViewController: ViewCode {
+extension LoginViewController: ViewCode {
     
     func setupViewHierarchy() {
         header.addSubview(imageView)
         self.view.addSubviews([header,
                                titleLabel,
-                               nameTextField,
                                emailTextField,
                                passwordTextField,
-                               passwordConfirmationTextField,
-                               saveButton,
+                               loginButton,
                                loadingIndicatorView
                               ])
     }
@@ -118,7 +102,7 @@ extension SignUpViewController: ViewCode {
     func setupConstraints() {
         let safeArea = self.view.safeAreaLayoutGuide
         
-        //        // header
+        // header
         NSLayoutConstraint.activate([
             self.header.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 0),
             self.header.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 0),
@@ -140,50 +124,34 @@ extension SignUpViewController: ViewCode {
             self.titleLabel.topAnchor.constraint(equalTo: self.header.bottomAnchor, constant: 24)
         ])
         
-        // nameTextField
-        NSLayoutConstraint.activate([
-            self.nameTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
-            self.nameTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32),
-            self.nameTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32),
-            self.nameTextField.heightAnchor.constraint(equalToConstant: 40)
-        ])
-        
         // emailTextField
         NSLayoutConstraint.activate([
-            self.emailTextField.topAnchor.constraint(equalTo: self.nameTextField.bottomAnchor, constant: 16),
-            self.emailTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
-            self.emailTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
-            self.emailTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
+            self.emailTextField.topAnchor.constraint(equalTo: self.titleLabel.bottomAnchor, constant: 16),
+            self.emailTextField.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor, constant: 32),
+            self.emailTextField.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor, constant: -32),
+            self.emailTextField.heightAnchor.constraint(equalToConstant: 40)
         ])
         
         // passwordTextField
         NSLayoutConstraint.activate([
             self.passwordTextField.topAnchor.constraint(equalTo: self.emailTextField.bottomAnchor, constant: 16),
-            self.passwordTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
-            self.passwordTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
-            self.passwordTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
-        ])
-        
-        // passwordConfirmationTextField
-        NSLayoutConstraint.activate([
-            self.passwordConfirmationTextField.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 16),
-            self.passwordConfirmationTextField.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
-            self.passwordConfirmationTextField.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
-            self.passwordConfirmationTextField.heightAnchor.constraint(equalTo: self.nameTextField.heightAnchor)
+            self.passwordTextField.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
+            self.passwordTextField.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
+            self.passwordTextField.heightAnchor.constraint(equalTo: self.emailTextField.heightAnchor)
         ])
         
         // saveButton
         NSLayoutConstraint.activate([
-            self.saveButton.topAnchor.constraint(equalTo: self.passwordConfirmationTextField.bottomAnchor, constant: 32),
-            self.saveButton.leadingAnchor.constraint(equalTo: self.nameTextField.leadingAnchor),
-            self.saveButton.trailingAnchor.constraint(equalTo: self.nameTextField.trailingAnchor),
-            self.saveButton.heightAnchor.constraint(equalToConstant: 60)
+            self.loginButton.topAnchor.constraint(equalTo: self.passwordTextField.bottomAnchor, constant: 32),
+            self.loginButton.leadingAnchor.constraint(equalTo: self.emailTextField.leadingAnchor),
+            self.loginButton.trailingAnchor.constraint(equalTo: self.emailTextField.trailingAnchor),
+            self.loginButton.heightAnchor.constraint(equalToConstant: 60)
         ])
         
         // loadingIndicatorView
         NSLayoutConstraint.activate([
             self.loadingIndicatorView.centerXAnchor.constraint(equalTo: safeArea.centerXAnchor),
-            self.loadingIndicatorView.topAnchor.constraint(equalTo: self.saveButton.bottomAnchor, constant: 16)
+            self.loadingIndicatorView.topAnchor.constraint(equalTo: self.loginButton.bottomAnchor, constant: 16)
         ])
     }
     
@@ -193,7 +161,7 @@ extension SignUpViewController: ViewCode {
 }
 
 // MARK: - LoagingView
-extension SignUpViewController: LoagingView {
+extension LoginViewController: LoagingView {
     
     public func display(viewModel: LoagingViewModel) {
         if viewModel.isLoading {
@@ -205,7 +173,7 @@ extension SignUpViewController: LoagingView {
 }
 
 // MARK: - AlertView
-extension SignUpViewController: AlertView {
+extension LoginViewController: AlertView {
     
     public func showMessage(viewModel: Presentation.AlertViewModel) {
         let alert = UIAlertController(

@@ -71,6 +71,8 @@
 		D438053529DA19440062A70E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053429DA19440062A70E /* LoginViewModel.swift */; };
 		D438053729DA19C40062A70E /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053629DA19C40062A70E /* LoginPresenter.swift */; };
 		D438053929DA1C610062A70E /* AuthenticationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053829DA1C610062A70E /* AuthenticationSpy.swift */; };
+		D438053C29DA530E0062A70E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053B29DA530E0062A70E /* LoginViewController.swift */; };
+		D438053F29DA54100062A70E /* LoginControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D438053E29DA54100062A70E /* LoginControllerTests.swift */; };
 		D476BC6728D1582100C7E87E /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6628D1582100C7E87E /* SignUpPresenter.swift */; };
 		D476BC6B28D1587900C7E87E /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D476BC6A28D1587900C7E87E /* AlertView.swift */; };
 		D476BC7028D7BD8A00C7E87E /* AccountModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4A5A909285962AE0099B00D /* AccountModelFactory.swift */; };
@@ -387,6 +389,8 @@
 		D438053429DA19440062A70E /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D438053629DA19C40062A70E /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
 		D438053829DA1C610062A70E /* AuthenticationSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthenticationSpy.swift; sourceTree = "<group>"; };
+		D438053B29DA530E0062A70E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		D438053E29DA54100062A70E /* LoginControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginControllerTests.swift; sourceTree = "<group>"; };
 		D476BC6628D1582100C7E87E /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		D476BC6A28D1587900C7E87E /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		D476BC6E28D15C0B00C7E87E /* EmailValidator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailValidator.swift; sourceTree = "<group>"; };
@@ -760,6 +764,21 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
+		D438053A29DA53040062A70E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		D438053D29DA54040062A70E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				D438053E29DA54100062A70E /* LoginControllerTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		D476BC6528D1580D00C7E87E /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
@@ -864,6 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				D476BCA628D952B300C7E87E /* SignUpViewController.swift */,
+				D438053B29DA530E0062A70E /* LoginViewController.swift */,
 			);
 			path = SignUp;
 			sourceTree = "<group>";
@@ -879,6 +899,7 @@
 		D47DEC902924594D005E654C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D438053A29DA53040062A70E /* Login */,
 				D47DEC8E2924591A005E654C /* SignUp */,
 			);
 			path = Screens;
@@ -887,6 +908,7 @@
 		D47DEC9129245953005E654C /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				D438053D29DA54040062A70E /* Login */,
 				D47DEC8F29245920005E654C /* SignUp */,
 			);
 			path = Screens;
@@ -1714,6 +1736,7 @@
 				D438052929D8F8900062A70E /* NavigationController.swift in Sources */,
 				D43804CE29C13B240062A70E /* HighlightedTextField.swift in Sources */,
 				D438052329D8F5D90062A70E /* UIColor+.swift in Sources */,
+				D438053C29DA530E0062A70E /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1723,6 +1746,7 @@
 			files = (
 				D476BC9828D94F1800C7E87E /* SignUpViewControllerTests.swift in Sources */,
 				D47DEC9429245A77005E654C /* TestExtension.swift in Sources */,
+				D438053F29DA54100062A70E /* LoginControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
