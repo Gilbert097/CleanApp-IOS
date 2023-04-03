@@ -15,26 +15,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let nav = NavigationController()
         self.window?.makeKeyAndVisible()
         self.window?.windowScene = windowScene
-        self.window?.rootViewController = makeWelcomeViewController()
+        self.window?.rootViewController = nav
     }
     
-    private func makeSignUpViewController() -> NavigationController {
-        let httpClient = makeAlamofireAdapter()
-        let addAccount = makeRemoteAddAccount(httpClient: httpClient)
-        let viewController = makeSignUpController(addAccount: addAccount)
-        return NavigationController(rootViewController: viewController)
-    }
-    
-    private func makeLoginViewViewController() -> NavigationController {
-        let httpClient = makeAlamofireAdapter()
-        let authentication = makeRemoteAuthentication(httpClient: httpClient)
-        let viewController = makeLoginController(authentication: authentication)
-        return NavigationController(rootViewController: viewController)
-    }
-    
-    private func makeWelcomeViewController() -> WelcomeViewController {
-        WelcomeViewController()
-    }
+//    private func makeSignUpViewController() -> NavigationController {
+//        let httpClient = makeAlamofireAdapter()
+//        let addAccount = makeRemoteAddAccount(httpClient: httpClient)
+//        let viewController = makeSignUpController(addAccount: addAccount)
+//        return NavigationController(rootViewController: viewController)
+//    }
+//
+//    private func makeLoginViewViewController() -> NavigationController {
+//        let httpClient = makeAlamofireAdapter()
+//        let authentication = makeRemoteAuthentication(httpClient: httpClient)
+//        let viewController = makeLoginController(authentication: authentication)
+//        return NavigationController(rootViewController: viewController)
+//    }
+//
+//    private func makeWelcomeViewController() -> WelcomeViewController {
+//        WelcomeViewController()
+//    }
 }
