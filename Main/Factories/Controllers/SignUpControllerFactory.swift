@@ -11,7 +11,11 @@ import UI
 import Presentation
 import Validation
 
-public func makeSignUpController(addAccount: AddAccount) -> SignUpViewController {
+public func makeSignUpController() -> SignUpViewController {
+    makeSignUpControllerWith(addAccount: makeRemoteAddAccount())
+}
+
+public func makeSignUpControllerWith(addAccount: AddAccount) -> SignUpViewController {
     let controller = SignUpViewController()
     let validationComposite = ValidationComposite(validations: makeSignValidations())
     let presenter = SignUpPresenter(

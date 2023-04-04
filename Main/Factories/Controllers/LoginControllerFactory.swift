@@ -1,5 +1,5 @@
 //
-//  LoginControllerFactory..swift
+//  LoginControllerFactory.swift
 //  Main
 //
 //  Created by Gilberto Silva on 21/03/23.
@@ -11,7 +11,11 @@ import UI
 import Presentation
 import Validation
 
-public func makeLoginController(authentication: Authentication) -> LoginViewController {
+public func makeLoginController() -> LoginViewController {
+   makeLoginControllerWith(authentication: makeRemoteAuthentication())
+}
+
+public func makeLoginControllerWith(authentication: Authentication) -> LoginViewController {
     let controller = LoginViewController()
     let validationComposite = ValidationComposite(validations: makeLoginValidations())
     let presenter = LoginPresenter(
