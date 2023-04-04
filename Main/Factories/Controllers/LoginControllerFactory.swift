@@ -12,7 +12,7 @@ import Presentation
 import Validation
 
 public func makeLoginController() -> LoginViewController {
-   makeLoginControllerWith(authentication: makeRemoteAuthentication())
+    makeLoginControllerWith(authentication: makeRemoteAuthentication())
 }
 
 public func makeLoginControllerWith(authentication: Authentication) -> LoginViewController {
@@ -28,9 +28,16 @@ public func makeLoginControllerWith(authentication: Authentication) -> LoginView
 }
 
 public func makeLoginValidations() -> [Validation] {
-    [
-        RequiredFieldValidation(fieldName: "email", fieldLabel: "Email"),
-        EmailValidation(fieldName: "email", fieldLabel: "Email", emailValidator: makeEmailValidatorAdapter()),
-        RequiredFieldValidation(fieldName: "password", fieldLabel: "Senha")
-    ]
+    ValidationBuilder
+        .field("email")
+        .label("Email")
+        .required()
+        .email()
+        .build()
+    +
+    ValidationBuilder
+        .field("password")
+        .label("Senha")
+        .required()
+        .build()
 }
